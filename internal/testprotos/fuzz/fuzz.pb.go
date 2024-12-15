@@ -19,10 +19,7 @@ import (
 // Fuzz is a container for every message we want to make available to the
 // fuzzer.
 type Fuzz struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
+	state                   protoimpl.MessageState        `protogen:"open.v1"`
 	TestAllTypes            *test.TestAllTypes            `protobuf:"bytes,1,opt,name=test_all_types,json=testAllTypes" json:"test_all_types,omitempty"`
 	TestAllExtensions       *test.TestAllExtensions       `protobuf:"bytes,2,opt,name=test_all_extensions,json=testAllExtensions" json:"test_all_extensions,omitempty"`
 	TestRequired            *test.TestRequired            `protobuf:"bytes,3,opt,name=test_required,json=testRequired" json:"test_required,omitempty"`
@@ -31,15 +28,15 @@ type Fuzz struct {
 	TestPackedTypes         *test.TestPackedTypes         `protobuf:"bytes,6,opt,name=test_packed_types,json=testPackedTypes" json:"test_packed_types,omitempty"`
 	TestPackedExtensions    *test.TestPackedExtensions    `protobuf:"bytes,7,opt,name=test_packed_extensions,json=testPackedExtensions" json:"test_packed_extensions,omitempty"`
 	TestAllTypes3           *test3.TestAllTypes           `protobuf:"bytes,8,opt,name=test_all_types3,json=testAllTypes3" json:"test_all_types3,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *Fuzz) Reset() {
 	*x = Fuzz{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_fuzz_fuzz_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_fuzz_fuzz_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Fuzz) String() string {
@@ -50,7 +47,7 @@ func (*Fuzz) ProtoMessage() {}
 
 func (x *Fuzz) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_fuzz_fuzz_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -225,20 +222,6 @@ func init() { file_internal_testprotos_fuzz_fuzz_proto_init() }
 func file_internal_testprotos_fuzz_fuzz_proto_init() {
 	if File_internal_testprotos_fuzz_fuzz_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_fuzz_fuzz_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*Fuzz); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

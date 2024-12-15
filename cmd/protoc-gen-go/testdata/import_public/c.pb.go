@@ -16,24 +16,21 @@ import (
 )
 
 type UsingPublicImport struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
+	state protoimpl.MessageState `protogen:"open.v1"`
 	// Local is declared in b.proto, which is a public import of a.proto.
 	Local *Local `protobuf:"bytes,1,opt,name=local" json:"local,omitempty"`
 	// Sub2Message is declared in sub2/a.proto, which is a public import of
 	// sub/a.proto, which is a public import of a.proto.
-	Sub2 *sub2.Sub2Message `protobuf:"bytes,2,opt,name=sub2" json:"sub2,omitempty"` // declared in sub2/a.proto
+	Sub2          *sub2.Sub2Message `protobuf:"bytes,2,opt,name=sub2" json:"sub2,omitempty"` // declared in sub2/a.proto
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UsingPublicImport) Reset() {
 	*x = UsingPublicImport{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_import_public_c_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_import_public_c_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *UsingPublicImport) String() string {
@@ -44,7 +41,7 @@ func (*UsingPublicImport) ProtoMessage() {}
 
 func (x *UsingPublicImport) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_import_public_c_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -134,20 +131,6 @@ func file_cmd_protoc_gen_go_testdata_import_public_c_proto_init() {
 		return
 	}
 	file_cmd_protoc_gen_go_testdata_import_public_a_proto_init()
-	if !protoimpl.UnsafeEnabled {
-		file_cmd_protoc_gen_go_testdata_import_public_c_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*UsingPublicImport); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

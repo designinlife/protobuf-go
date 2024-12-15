@@ -15,35 +15,32 @@ import (
 )
 
 type SixteenRequired struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	F1            *int32                 `protobuf:"varint,1,req,name=f1" json:"f1,omitempty"`
+	F2            *int32                 `protobuf:"varint,2,req,name=f2" json:"f2,omitempty"`
+	F3            *int32                 `protobuf:"varint,3,req,name=f3" json:"f3,omitempty"`
+	F4            *int32                 `protobuf:"varint,4,req,name=f4" json:"f4,omitempty"`
+	F5            *int32                 `protobuf:"varint,5,req,name=f5" json:"f5,omitempty"`
+	F6            *int32                 `protobuf:"varint,6,req,name=f6" json:"f6,omitempty"`
+	F7            *int32                 `protobuf:"varint,7,req,name=f7" json:"f7,omitempty"`
+	F8            *int32                 `protobuf:"varint,8,req,name=f8" json:"f8,omitempty"`
+	F9            *int32                 `protobuf:"varint,9,req,name=f9" json:"f9,omitempty"`
+	F10           *int32                 `protobuf:"varint,10,req,name=f10" json:"f10,omitempty"`
+	F11           *int32                 `protobuf:"varint,11,req,name=f11" json:"f11,omitempty"`
+	F12           *int32                 `protobuf:"varint,12,req,name=f12" json:"f12,omitempty"`
+	F13           *int32                 `protobuf:"varint,13,req,name=f13" json:"f13,omitempty"`
+	F14           *int32                 `protobuf:"varint,14,req,name=f14" json:"f14,omitempty"`
+	F15           *int32                 `protobuf:"varint,15,req,name=f15" json:"f15,omitempty"`
+	F16           *int32                 `protobuf:"varint,16,req,name=f16" json:"f16,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	F1  *int32 `protobuf:"varint,1,req,name=f1" json:"f1,omitempty"`
-	F2  *int32 `protobuf:"varint,2,req,name=f2" json:"f2,omitempty"`
-	F3  *int32 `protobuf:"varint,3,req,name=f3" json:"f3,omitempty"`
-	F4  *int32 `protobuf:"varint,4,req,name=f4" json:"f4,omitempty"`
-	F5  *int32 `protobuf:"varint,5,req,name=f5" json:"f5,omitempty"`
-	F6  *int32 `protobuf:"varint,6,req,name=f6" json:"f6,omitempty"`
-	F7  *int32 `protobuf:"varint,7,req,name=f7" json:"f7,omitempty"`
-	F8  *int32 `protobuf:"varint,8,req,name=f8" json:"f8,omitempty"`
-	F9  *int32 `protobuf:"varint,9,req,name=f9" json:"f9,omitempty"`
-	F10 *int32 `protobuf:"varint,10,req,name=f10" json:"f10,omitempty"`
-	F11 *int32 `protobuf:"varint,11,req,name=f11" json:"f11,omitempty"`
-	F12 *int32 `protobuf:"varint,12,req,name=f12" json:"f12,omitempty"`
-	F13 *int32 `protobuf:"varint,13,req,name=f13" json:"f13,omitempty"`
-	F14 *int32 `protobuf:"varint,14,req,name=f14" json:"f14,omitempty"`
-	F15 *int32 `protobuf:"varint,15,req,name=f15" json:"f15,omitempty"`
-	F16 *int32 `protobuf:"varint,16,req,name=f16" json:"f16,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *SixteenRequired) Reset() {
 	*x = SixteenRequired{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_benchmarks_micro_micro_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_benchmarks_micro_micro_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *SixteenRequired) String() string {
@@ -54,7 +51,7 @@ func (*SixteenRequired) ProtoMessage() {}
 
 func (x *SixteenRequired) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_benchmarks_micro_micro_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -242,20 +239,6 @@ func init() { file_internal_testprotos_benchmarks_micro_micro_proto_init() }
 func file_internal_testprotos_benchmarks_micro_micro_proto_init() {
 	if File_internal_testprotos_benchmarks_micro_micro_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_benchmarks_micro_micro_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*SixteenRequired); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

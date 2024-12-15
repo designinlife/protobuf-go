@@ -18,73 +18,72 @@ import (
 )
 
 type TestFieldTrack struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	weakFields    protoimpl.WeakFields
-	unknownFields protoimpl.UnknownFields
-
-	OptionalInt32         *int32                                      `protobuf:"varint,1,opt,name=optional_int32,json=optionalInt32" json:"optional_int32,omitempty" go:"track"`
-	OptionalInt64         *int64                                      `protobuf:"varint,2,opt,name=optional_int64,json=optionalInt64" json:"optional_int64,omitempty" go:"track"`
-	OptionalUint32        *uint32                                     `protobuf:"varint,3,opt,name=optional_uint32,json=optionalUint32" json:"optional_uint32,omitempty" go:"track"`
-	OptionalUint64        *uint64                                     `protobuf:"varint,4,opt,name=optional_uint64,json=optionalUint64" json:"optional_uint64,omitempty" go:"track"`
-	OptionalSint32        *int32                                      `protobuf:"zigzag32,5,opt,name=optional_sint32,json=optionalSint32" json:"optional_sint32,omitempty" go:"track"`
-	OptionalSint64        *int64                                      `protobuf:"zigzag64,6,opt,name=optional_sint64,json=optionalSint64" json:"optional_sint64,omitempty" go:"track"`
-	OptionalFixed32       *uint32                                     `protobuf:"fixed32,7,opt,name=optional_fixed32,json=optionalFixed32" json:"optional_fixed32,omitempty" go:"track"`
-	OptionalFixed64       *uint64                                     `protobuf:"fixed64,8,opt,name=optional_fixed64,json=optionalFixed64" json:"optional_fixed64,omitempty" go:"track"`
-	OptionalSfixed32      *int32                                      `protobuf:"fixed32,9,opt,name=optional_sfixed32,json=optionalSfixed32" json:"optional_sfixed32,omitempty" go:"track"`
-	OptionalSfixed64      *int64                                      `protobuf:"fixed64,10,opt,name=optional_sfixed64,json=optionalSfixed64" json:"optional_sfixed64,omitempty" go:"track"`
-	OptionalFloat         *float32                                    `protobuf:"fixed32,11,opt,name=optional_float,json=optionalFloat" json:"optional_float,omitempty" go:"track"`
-	OptionalDouble        *float64                                    `protobuf:"fixed64,12,opt,name=optional_double,json=optionalDouble" json:"optional_double,omitempty" go:"track"`
-	OptionalBool          *bool                                       `protobuf:"varint,13,opt,name=optional_bool,json=optionalBool" json:"optional_bool,omitempty" go:"track"`
-	OptionalString        *string                                     `protobuf:"bytes,14,opt,name=optional_string,json=optionalString" json:"optional_string,omitempty" go:"track"`
-	OptionalBytes         []byte                                      `protobuf:"bytes,15,opt,name=optional_bytes,json=optionalBytes" json:"optional_bytes,omitempty" go:"track"`
-	OptionalEnum          *test.TestAllTypes_NestedEnum               `protobuf:"varint,16,opt,name=optional_enum,json=optionalEnum,enum=goproto.proto.test.TestAllTypes_NestedEnum" json:"optional_enum,omitempty" go:"track"`
-	OptionalMessage       *test.TestAllTypes_NestedMessage            `protobuf:"bytes,17,opt,name=optional_message,json=optionalMessage" json:"optional_message,omitempty" go:"track"`
-	RepeatedInt32         []int32                                     `protobuf:"varint,21,rep,name=repeated_int32,json=repeatedInt32" json:"repeated_int32,omitempty" go:"track"`
-	RepeatedInt64         []int64                                     `protobuf:"varint,22,rep,name=repeated_int64,json=repeatedInt64" json:"repeated_int64,omitempty" go:"track"`
-	RepeatedUint32        []uint32                                    `protobuf:"varint,23,rep,name=repeated_uint32,json=repeatedUint32" json:"repeated_uint32,omitempty" go:"track"`
-	RepeatedUint64        []uint64                                    `protobuf:"varint,24,rep,name=repeated_uint64,json=repeatedUint64" json:"repeated_uint64,omitempty" go:"track"`
-	RepeatedSint32        []int32                                     `protobuf:"zigzag32,25,rep,name=repeated_sint32,json=repeatedSint32" json:"repeated_sint32,omitempty" go:"track"`
-	RepeatedSint64        []int64                                     `protobuf:"zigzag64,26,rep,name=repeated_sint64,json=repeatedSint64" json:"repeated_sint64,omitempty" go:"track"`
-	RepeatedFixed32       []uint32                                    `protobuf:"fixed32,27,rep,name=repeated_fixed32,json=repeatedFixed32" json:"repeated_fixed32,omitempty" go:"track"`
-	RepeatedFixed64       []uint64                                    `protobuf:"fixed64,28,rep,name=repeated_fixed64,json=repeatedFixed64" json:"repeated_fixed64,omitempty" go:"track"`
-	RepeatedSfixed32      []int32                                     `protobuf:"fixed32,29,rep,name=repeated_sfixed32,json=repeatedSfixed32" json:"repeated_sfixed32,omitempty" go:"track"`
-	RepeatedSfixed64      []int64                                     `protobuf:"fixed64,30,rep,name=repeated_sfixed64,json=repeatedSfixed64" json:"repeated_sfixed64,omitempty" go:"track"`
-	RepeatedFloat         []float32                                   `protobuf:"fixed32,31,rep,name=repeated_float,json=repeatedFloat" json:"repeated_float,omitempty" go:"track"`
-	RepeatedDouble        []float64                                   `protobuf:"fixed64,32,rep,name=repeated_double,json=repeatedDouble" json:"repeated_double,omitempty" go:"track"`
-	RepeatedBool          []bool                                      `protobuf:"varint,33,rep,name=repeated_bool,json=repeatedBool" json:"repeated_bool,omitempty" go:"track"`
-	RepeatedString        []string                                    `protobuf:"bytes,34,rep,name=repeated_string,json=repeatedString" json:"repeated_string,omitempty" go:"track"`
-	RepeatedBytes         [][]byte                                    `protobuf:"bytes,35,rep,name=repeated_bytes,json=repeatedBytes" json:"repeated_bytes,omitempty" go:"track"`
-	RepeatedEnum          []test.TestAllTypes_NestedEnum              `protobuf:"varint,36,rep,name=repeated_enum,json=repeatedEnum,enum=goproto.proto.test.TestAllTypes_NestedEnum" json:"repeated_enum,omitempty" go:"track"`
-	RepeatedMessage       []*test.TestAllTypes_NestedMessage          `protobuf:"bytes,37,rep,name=repeated_message,json=repeatedMessage" json:"repeated_message,omitempty" go:"track"`
-	MapStringInt32        map[string]int32                            `protobuf:"bytes,41,rep,name=map_string_int32,json=mapStringInt32" json:"map_string_int32,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" go:"track"`
-	MapStringInt64        map[string]int64                            `protobuf:"bytes,42,rep,name=map_string_int64,json=mapStringInt64" json:"map_string_int64,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" go:"track"`
-	MapStringUint32       map[string]uint32                           `protobuf:"bytes,43,rep,name=map_string_uint32,json=mapStringUint32" json:"map_string_uint32,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" go:"track"`
-	MapStringUint64       map[string]uint64                           `protobuf:"bytes,44,rep,name=map_string_uint64,json=mapStringUint64" json:"map_string_uint64,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" go:"track"`
-	MapStringSint32       map[string]int32                            `protobuf:"bytes,45,rep,name=map_string_sint32,json=mapStringSint32" json:"map_string_sint32,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"zigzag32,2,opt,name=value" go:"track"`
-	MapStringSint64       map[string]int64                            `protobuf:"bytes,46,rep,name=map_string_sint64,json=mapStringSint64" json:"map_string_sint64,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"zigzag64,2,opt,name=value" go:"track"`
-	MapStringFixed32      map[string]uint32                           `protobuf:"bytes,47,rep,name=map_string_fixed32,json=mapStringFixed32" json:"map_string_fixed32,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed32,2,opt,name=value" go:"track"`
-	MapStringFixed64      map[string]uint64                           `protobuf:"bytes,48,rep,name=map_string_fixed64,json=mapStringFixed64" json:"map_string_fixed64,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value" go:"track"`
-	MapStringSfixed32     map[string]int32                            `protobuf:"bytes,49,rep,name=map_string_sfixed32,json=mapStringSfixed32" json:"map_string_sfixed32,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed32,2,opt,name=value" go:"track"`
-	MapStringSfixed64     map[string]int64                            `protobuf:"bytes,50,rep,name=map_string_sfixed64,json=mapStringSfixed64" json:"map_string_sfixed64,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value" go:"track"`
-	MapStringFloat        map[string]float32                          `protobuf:"bytes,51,rep,name=map_string_float,json=mapStringFloat" json:"map_string_float,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed32,2,opt,name=value" go:"track"`
-	MapStringDouble       map[string]float64                          `protobuf:"bytes,52,rep,name=map_string_double,json=mapStringDouble" json:"map_string_double,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value" go:"track"`
-	MapStringBool         map[string]bool                             `protobuf:"bytes,53,rep,name=map_string_bool,json=mapStringBool" json:"map_string_bool,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" go:"track"`
-	MapStringString       map[string]string                           `protobuf:"bytes,54,rep,name=map_string_string,json=mapStringString" json:"map_string_string,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" go:"track"`
-	MapStringBytes        map[string][]byte                           `protobuf:"bytes,55,rep,name=map_string_bytes,json=mapStringBytes" json:"map_string_bytes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" go:"track"`
-	MapStringEnum         map[string]test.TestAllTypes_NestedEnum     `protobuf:"bytes,56,rep,name=map_string_enum,json=mapStringEnum" json:"map_string_enum,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value,enum=goproto.proto.test.TestAllTypes_NestedEnum" go:"track"`
-	MapStringMessage      map[string]*test.TestAllTypes_NestedMessage `protobuf:"bytes,57,rep,name=map_string_message,json=mapStringMessage" json:"map_string_message,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" go:"track"`
-	XXX_weak_WeakMessage1 struct{}                                    `protobuf:"bytes,100,opt,name=weak_message1,json=weakMessage1,weak=goproto.proto.test.weak.WeakImportMessage1" json:"weak_message1,omitempty" go:"track"`
-	XXX_weak_WeakMessage2 struct{}                                    `protobuf:"bytes,101,opt,name=weak_message2,json=weakMessage2,weak=goproto.proto.test.weak.WeakImportMessage2" json:"weak_message2,omitempty" go:"track"`
+	state             protoimpl.MessageState                      `protogen:"open.v1"`
+	OptionalInt32     *int32                                      `protobuf:"varint,1,opt,name=optional_int32,json=optionalInt32" json:"optional_int32,omitempty" go:"track"`
+	OptionalInt64     *int64                                      `protobuf:"varint,2,opt,name=optional_int64,json=optionalInt64" json:"optional_int64,omitempty" go:"track"`
+	OptionalUint32    *uint32                                     `protobuf:"varint,3,opt,name=optional_uint32,json=optionalUint32" json:"optional_uint32,omitempty" go:"track"`
+	OptionalUint64    *uint64                                     `protobuf:"varint,4,opt,name=optional_uint64,json=optionalUint64" json:"optional_uint64,omitempty" go:"track"`
+	OptionalSint32    *int32                                      `protobuf:"zigzag32,5,opt,name=optional_sint32,json=optionalSint32" json:"optional_sint32,omitempty" go:"track"`
+	OptionalSint64    *int64                                      `protobuf:"zigzag64,6,opt,name=optional_sint64,json=optionalSint64" json:"optional_sint64,omitempty" go:"track"`
+	OptionalFixed32   *uint32                                     `protobuf:"fixed32,7,opt,name=optional_fixed32,json=optionalFixed32" json:"optional_fixed32,omitempty" go:"track"`
+	OptionalFixed64   *uint64                                     `protobuf:"fixed64,8,opt,name=optional_fixed64,json=optionalFixed64" json:"optional_fixed64,omitempty" go:"track"`
+	OptionalSfixed32  *int32                                      `protobuf:"fixed32,9,opt,name=optional_sfixed32,json=optionalSfixed32" json:"optional_sfixed32,omitempty" go:"track"`
+	OptionalSfixed64  *int64                                      `protobuf:"fixed64,10,opt,name=optional_sfixed64,json=optionalSfixed64" json:"optional_sfixed64,omitempty" go:"track"`
+	OptionalFloat     *float32                                    `protobuf:"fixed32,11,opt,name=optional_float,json=optionalFloat" json:"optional_float,omitempty" go:"track"`
+	OptionalDouble    *float64                                    `protobuf:"fixed64,12,opt,name=optional_double,json=optionalDouble" json:"optional_double,omitempty" go:"track"`
+	OptionalBool      *bool                                       `protobuf:"varint,13,opt,name=optional_bool,json=optionalBool" json:"optional_bool,omitempty" go:"track"`
+	OptionalString    *string                                     `protobuf:"bytes,14,opt,name=optional_string,json=optionalString" json:"optional_string,omitempty" go:"track"`
+	OptionalBytes     []byte                                      `protobuf:"bytes,15,opt,name=optional_bytes,json=optionalBytes" json:"optional_bytes,omitempty" go:"track"`
+	OptionalEnum      *test.TestAllTypes_NestedEnum               `protobuf:"varint,16,opt,name=optional_enum,json=optionalEnum,enum=goproto.proto.test.TestAllTypes_NestedEnum" json:"optional_enum,omitempty" go:"track"`
+	OptionalMessage   *test.TestAllTypes_NestedMessage            `protobuf:"bytes,17,opt,name=optional_message,json=optionalMessage" json:"optional_message,omitempty" go:"track"`
+	RepeatedInt32     []int32                                     `protobuf:"varint,21,rep,name=repeated_int32,json=repeatedInt32" json:"repeated_int32,omitempty" go:"track"`
+	RepeatedInt64     []int64                                     `protobuf:"varint,22,rep,name=repeated_int64,json=repeatedInt64" json:"repeated_int64,omitempty" go:"track"`
+	RepeatedUint32    []uint32                                    `protobuf:"varint,23,rep,name=repeated_uint32,json=repeatedUint32" json:"repeated_uint32,omitempty" go:"track"`
+	RepeatedUint64    []uint64                                    `protobuf:"varint,24,rep,name=repeated_uint64,json=repeatedUint64" json:"repeated_uint64,omitempty" go:"track"`
+	RepeatedSint32    []int32                                     `protobuf:"zigzag32,25,rep,name=repeated_sint32,json=repeatedSint32" json:"repeated_sint32,omitempty" go:"track"`
+	RepeatedSint64    []int64                                     `protobuf:"zigzag64,26,rep,name=repeated_sint64,json=repeatedSint64" json:"repeated_sint64,omitempty" go:"track"`
+	RepeatedFixed32   []uint32                                    `protobuf:"fixed32,27,rep,name=repeated_fixed32,json=repeatedFixed32" json:"repeated_fixed32,omitempty" go:"track"`
+	RepeatedFixed64   []uint64                                    `protobuf:"fixed64,28,rep,name=repeated_fixed64,json=repeatedFixed64" json:"repeated_fixed64,omitempty" go:"track"`
+	RepeatedSfixed32  []int32                                     `protobuf:"fixed32,29,rep,name=repeated_sfixed32,json=repeatedSfixed32" json:"repeated_sfixed32,omitempty" go:"track"`
+	RepeatedSfixed64  []int64                                     `protobuf:"fixed64,30,rep,name=repeated_sfixed64,json=repeatedSfixed64" json:"repeated_sfixed64,omitempty" go:"track"`
+	RepeatedFloat     []float32                                   `protobuf:"fixed32,31,rep,name=repeated_float,json=repeatedFloat" json:"repeated_float,omitempty" go:"track"`
+	RepeatedDouble    []float64                                   `protobuf:"fixed64,32,rep,name=repeated_double,json=repeatedDouble" json:"repeated_double,omitempty" go:"track"`
+	RepeatedBool      []bool                                      `protobuf:"varint,33,rep,name=repeated_bool,json=repeatedBool" json:"repeated_bool,omitempty" go:"track"`
+	RepeatedString    []string                                    `protobuf:"bytes,34,rep,name=repeated_string,json=repeatedString" json:"repeated_string,omitempty" go:"track"`
+	RepeatedBytes     [][]byte                                    `protobuf:"bytes,35,rep,name=repeated_bytes,json=repeatedBytes" json:"repeated_bytes,omitempty" go:"track"`
+	RepeatedEnum      []test.TestAllTypes_NestedEnum              `protobuf:"varint,36,rep,name=repeated_enum,json=repeatedEnum,enum=goproto.proto.test.TestAllTypes_NestedEnum" json:"repeated_enum,omitempty" go:"track"`
+	RepeatedMessage   []*test.TestAllTypes_NestedMessage          `protobuf:"bytes,37,rep,name=repeated_message,json=repeatedMessage" json:"repeated_message,omitempty" go:"track"`
+	MapStringInt32    map[string]int32                            `protobuf:"bytes,41,rep,name=map_string_int32,json=mapStringInt32" json:"map_string_int32,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" go:"track"`
+	MapStringInt64    map[string]int64                            `protobuf:"bytes,42,rep,name=map_string_int64,json=mapStringInt64" json:"map_string_int64,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" go:"track"`
+	MapStringUint32   map[string]uint32                           `protobuf:"bytes,43,rep,name=map_string_uint32,json=mapStringUint32" json:"map_string_uint32,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" go:"track"`
+	MapStringUint64   map[string]uint64                           `protobuf:"bytes,44,rep,name=map_string_uint64,json=mapStringUint64" json:"map_string_uint64,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" go:"track"`
+	MapStringSint32   map[string]int32                            `protobuf:"bytes,45,rep,name=map_string_sint32,json=mapStringSint32" json:"map_string_sint32,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"zigzag32,2,opt,name=value" go:"track"`
+	MapStringSint64   map[string]int64                            `protobuf:"bytes,46,rep,name=map_string_sint64,json=mapStringSint64" json:"map_string_sint64,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"zigzag64,2,opt,name=value" go:"track"`
+	MapStringFixed32  map[string]uint32                           `protobuf:"bytes,47,rep,name=map_string_fixed32,json=mapStringFixed32" json:"map_string_fixed32,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed32,2,opt,name=value" go:"track"`
+	MapStringFixed64  map[string]uint64                           `protobuf:"bytes,48,rep,name=map_string_fixed64,json=mapStringFixed64" json:"map_string_fixed64,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value" go:"track"`
+	MapStringSfixed32 map[string]int32                            `protobuf:"bytes,49,rep,name=map_string_sfixed32,json=mapStringSfixed32" json:"map_string_sfixed32,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed32,2,opt,name=value" go:"track"`
+	MapStringSfixed64 map[string]int64                            `protobuf:"bytes,50,rep,name=map_string_sfixed64,json=mapStringSfixed64" json:"map_string_sfixed64,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value" go:"track"`
+	MapStringFloat    map[string]float32                          `protobuf:"bytes,51,rep,name=map_string_float,json=mapStringFloat" json:"map_string_float,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed32,2,opt,name=value" go:"track"`
+	MapStringDouble   map[string]float64                          `protobuf:"bytes,52,rep,name=map_string_double,json=mapStringDouble" json:"map_string_double,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"fixed64,2,opt,name=value" go:"track"`
+	MapStringBool     map[string]bool                             `protobuf:"bytes,53,rep,name=map_string_bool,json=mapStringBool" json:"map_string_bool,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value" go:"track"`
+	MapStringString   map[string]string                           `protobuf:"bytes,54,rep,name=map_string_string,json=mapStringString" json:"map_string_string,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" go:"track"`
+	MapStringBytes    map[string][]byte                           `protobuf:"bytes,55,rep,name=map_string_bytes,json=mapStringBytes" json:"map_string_bytes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" go:"track"`
+	MapStringEnum     map[string]test.TestAllTypes_NestedEnum     `protobuf:"bytes,56,rep,name=map_string_enum,json=mapStringEnum" json:"map_string_enum,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value,enum=goproto.proto.test.TestAllTypes_NestedEnum" go:"track"`
+	MapStringMessage  map[string]*test.TestAllTypes_NestedMessage `protobuf:"bytes,57,rep,name=map_string_message,json=mapStringMessage" json:"map_string_message,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" go:"track"`
+	// Deprecated: Do not use. This will be deleted in the near future.
+	XXX_weak_WeakMessage1 struct{} `protobuf:"bytes,100,opt,name=weak_message1,json=weakMessage1,weak=goproto.proto.test.weak.WeakImportMessage1" json:"weak_message1,omitempty" go:"track"`
+	// Deprecated: Do not use. This will be deleted in the near future.
+	XXX_weak_WeakMessage2 struct{} `protobuf:"bytes,101,opt,name=weak_message2,json=weakMessage2,weak=goproto.proto.test.weak.WeakImportMessage2" json:"weak_message2,omitempty" go:"track"`
+	weakFields            protoimpl.WeakFields
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *TestFieldTrack) Reset() {
 	*x = TestFieldTrack{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_fieldtrack_fieldtrack_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_fieldtrack_fieldtrack_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestFieldTrack) String() string {
@@ -95,7 +94,7 @@ func (*TestFieldTrack) ProtoMessage() {}
 
 func (x *TestFieldTrack) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_fieldtrack_fieldtrack_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -111,7 +110,6 @@ func (*TestFieldTrack) Descriptor() ([]byte, []int) {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalInt32() int32 {
 	if x != nil && x.OptionalInt32 != nil {
 		return *x.OptionalInt32
@@ -120,7 +118,6 @@ func (x *TestFieldTrack) GetOptionalInt32() int32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalInt64() int64 {
 	if x != nil && x.OptionalInt64 != nil {
 		return *x.OptionalInt64
@@ -129,7 +126,6 @@ func (x *TestFieldTrack) GetOptionalInt64() int64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalUint32() uint32 {
 	if x != nil && x.OptionalUint32 != nil {
 		return *x.OptionalUint32
@@ -138,7 +134,6 @@ func (x *TestFieldTrack) GetOptionalUint32() uint32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalUint64() uint64 {
 	if x != nil && x.OptionalUint64 != nil {
 		return *x.OptionalUint64
@@ -147,7 +142,6 @@ func (x *TestFieldTrack) GetOptionalUint64() uint64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalSint32() int32 {
 	if x != nil && x.OptionalSint32 != nil {
 		return *x.OptionalSint32
@@ -156,7 +150,6 @@ func (x *TestFieldTrack) GetOptionalSint32() int32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalSint64() int64 {
 	if x != nil && x.OptionalSint64 != nil {
 		return *x.OptionalSint64
@@ -165,7 +158,6 @@ func (x *TestFieldTrack) GetOptionalSint64() int64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalFixed32() uint32 {
 	if x != nil && x.OptionalFixed32 != nil {
 		return *x.OptionalFixed32
@@ -174,7 +166,6 @@ func (x *TestFieldTrack) GetOptionalFixed32() uint32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalFixed64() uint64 {
 	if x != nil && x.OptionalFixed64 != nil {
 		return *x.OptionalFixed64
@@ -183,7 +174,6 @@ func (x *TestFieldTrack) GetOptionalFixed64() uint64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalSfixed32() int32 {
 	if x != nil && x.OptionalSfixed32 != nil {
 		return *x.OptionalSfixed32
@@ -192,7 +182,6 @@ func (x *TestFieldTrack) GetOptionalSfixed32() int32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalSfixed64() int64 {
 	if x != nil && x.OptionalSfixed64 != nil {
 		return *x.OptionalSfixed64
@@ -201,7 +190,6 @@ func (x *TestFieldTrack) GetOptionalSfixed64() int64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalFloat() float32 {
 	if x != nil && x.OptionalFloat != nil {
 		return *x.OptionalFloat
@@ -210,7 +198,6 @@ func (x *TestFieldTrack) GetOptionalFloat() float32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalDouble() float64 {
 	if x != nil && x.OptionalDouble != nil {
 		return *x.OptionalDouble
@@ -219,7 +206,6 @@ func (x *TestFieldTrack) GetOptionalDouble() float64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalBool() bool {
 	if x != nil && x.OptionalBool != nil {
 		return *x.OptionalBool
@@ -228,7 +214,6 @@ func (x *TestFieldTrack) GetOptionalBool() bool {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalString() string {
 	if x != nil && x.OptionalString != nil {
 		return *x.OptionalString
@@ -237,7 +222,6 @@ func (x *TestFieldTrack) GetOptionalString() string {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalBytes() []byte {
 	if x != nil {
 		return x.OptionalBytes
@@ -246,7 +230,6 @@ func (x *TestFieldTrack) GetOptionalBytes() []byte {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalEnum() test.TestAllTypes_NestedEnum {
 	if x != nil && x.OptionalEnum != nil {
 		return *x.OptionalEnum
@@ -255,7 +238,6 @@ func (x *TestFieldTrack) GetOptionalEnum() test.TestAllTypes_NestedEnum {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetOptionalMessage() *test.TestAllTypes_NestedMessage {
 	if x != nil {
 		return x.OptionalMessage
@@ -264,7 +246,6 @@ func (x *TestFieldTrack) GetOptionalMessage() *test.TestAllTypes_NestedMessage {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedInt32() []int32 {
 	if x != nil {
 		return x.RepeatedInt32
@@ -273,7 +254,6 @@ func (x *TestFieldTrack) GetRepeatedInt32() []int32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedInt64() []int64 {
 	if x != nil {
 		return x.RepeatedInt64
@@ -282,7 +262,6 @@ func (x *TestFieldTrack) GetRepeatedInt64() []int64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedUint32() []uint32 {
 	if x != nil {
 		return x.RepeatedUint32
@@ -291,7 +270,6 @@ func (x *TestFieldTrack) GetRepeatedUint32() []uint32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedUint64() []uint64 {
 	if x != nil {
 		return x.RepeatedUint64
@@ -300,7 +278,6 @@ func (x *TestFieldTrack) GetRepeatedUint64() []uint64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedSint32() []int32 {
 	if x != nil {
 		return x.RepeatedSint32
@@ -309,7 +286,6 @@ func (x *TestFieldTrack) GetRepeatedSint32() []int32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedSint64() []int64 {
 	if x != nil {
 		return x.RepeatedSint64
@@ -318,7 +294,6 @@ func (x *TestFieldTrack) GetRepeatedSint64() []int64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedFixed32() []uint32 {
 	if x != nil {
 		return x.RepeatedFixed32
@@ -327,7 +302,6 @@ func (x *TestFieldTrack) GetRepeatedFixed32() []uint32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedFixed64() []uint64 {
 	if x != nil {
 		return x.RepeatedFixed64
@@ -336,7 +310,6 @@ func (x *TestFieldTrack) GetRepeatedFixed64() []uint64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedSfixed32() []int32 {
 	if x != nil {
 		return x.RepeatedSfixed32
@@ -345,7 +318,6 @@ func (x *TestFieldTrack) GetRepeatedSfixed32() []int32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedSfixed64() []int64 {
 	if x != nil {
 		return x.RepeatedSfixed64
@@ -354,7 +326,6 @@ func (x *TestFieldTrack) GetRepeatedSfixed64() []int64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedFloat() []float32 {
 	if x != nil {
 		return x.RepeatedFloat
@@ -363,7 +334,6 @@ func (x *TestFieldTrack) GetRepeatedFloat() []float32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedDouble() []float64 {
 	if x != nil {
 		return x.RepeatedDouble
@@ -372,7 +342,6 @@ func (x *TestFieldTrack) GetRepeatedDouble() []float64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedBool() []bool {
 	if x != nil {
 		return x.RepeatedBool
@@ -381,7 +350,6 @@ func (x *TestFieldTrack) GetRepeatedBool() []bool {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedString() []string {
 	if x != nil {
 		return x.RepeatedString
@@ -390,7 +358,6 @@ func (x *TestFieldTrack) GetRepeatedString() []string {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedBytes() [][]byte {
 	if x != nil {
 		return x.RepeatedBytes
@@ -399,7 +366,6 @@ func (x *TestFieldTrack) GetRepeatedBytes() [][]byte {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedEnum() []test.TestAllTypes_NestedEnum {
 	if x != nil {
 		return x.RepeatedEnum
@@ -408,7 +374,6 @@ func (x *TestFieldTrack) GetRepeatedEnum() []test.TestAllTypes_NestedEnum {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetRepeatedMessage() []*test.TestAllTypes_NestedMessage {
 	if x != nil {
 		return x.RepeatedMessage
@@ -417,7 +382,6 @@ func (x *TestFieldTrack) GetRepeatedMessage() []*test.TestAllTypes_NestedMessage
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringInt32() map[string]int32 {
 	if x != nil {
 		return x.MapStringInt32
@@ -426,7 +390,6 @@ func (x *TestFieldTrack) GetMapStringInt32() map[string]int32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringInt64() map[string]int64 {
 	if x != nil {
 		return x.MapStringInt64
@@ -435,7 +398,6 @@ func (x *TestFieldTrack) GetMapStringInt64() map[string]int64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringUint32() map[string]uint32 {
 	if x != nil {
 		return x.MapStringUint32
@@ -444,7 +406,6 @@ func (x *TestFieldTrack) GetMapStringUint32() map[string]uint32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringUint64() map[string]uint64 {
 	if x != nil {
 		return x.MapStringUint64
@@ -453,7 +414,6 @@ func (x *TestFieldTrack) GetMapStringUint64() map[string]uint64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringSint32() map[string]int32 {
 	if x != nil {
 		return x.MapStringSint32
@@ -462,7 +422,6 @@ func (x *TestFieldTrack) GetMapStringSint32() map[string]int32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringSint64() map[string]int64 {
 	if x != nil {
 		return x.MapStringSint64
@@ -471,7 +430,6 @@ func (x *TestFieldTrack) GetMapStringSint64() map[string]int64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringFixed32() map[string]uint32 {
 	if x != nil {
 		return x.MapStringFixed32
@@ -480,7 +438,6 @@ func (x *TestFieldTrack) GetMapStringFixed32() map[string]uint32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringFixed64() map[string]uint64 {
 	if x != nil {
 		return x.MapStringFixed64
@@ -489,7 +446,6 @@ func (x *TestFieldTrack) GetMapStringFixed64() map[string]uint64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringSfixed32() map[string]int32 {
 	if x != nil {
 		return x.MapStringSfixed32
@@ -498,7 +454,6 @@ func (x *TestFieldTrack) GetMapStringSfixed32() map[string]int32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringSfixed64() map[string]int64 {
 	if x != nil {
 		return x.MapStringSfixed64
@@ -507,7 +462,6 @@ func (x *TestFieldTrack) GetMapStringSfixed64() map[string]int64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringFloat() map[string]float32 {
 	if x != nil {
 		return x.MapStringFloat
@@ -516,7 +470,6 @@ func (x *TestFieldTrack) GetMapStringFloat() map[string]float32 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringDouble() map[string]float64 {
 	if x != nil {
 		return x.MapStringDouble
@@ -525,7 +478,6 @@ func (x *TestFieldTrack) GetMapStringDouble() map[string]float64 {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringBool() map[string]bool {
 	if x != nil {
 		return x.MapStringBool
@@ -534,7 +486,6 @@ func (x *TestFieldTrack) GetMapStringBool() map[string]bool {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringString() map[string]string {
 	if x != nil {
 		return x.MapStringString
@@ -543,7 +494,6 @@ func (x *TestFieldTrack) GetMapStringString() map[string]string {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringBytes() map[string][]byte {
 	if x != nil {
 		return x.MapStringBytes
@@ -552,7 +502,6 @@ func (x *TestFieldTrack) GetMapStringBytes() map[string][]byte {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringEnum() map[string]test.TestAllTypes_NestedEnum {
 	if x != nil {
 		return x.MapStringEnum
@@ -561,7 +510,6 @@ func (x *TestFieldTrack) GetMapStringEnum() map[string]test.TestAllTypes_NestedE
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetMapStringMessage() map[string]*test.TestAllTypes_NestedMessage {
 	if x != nil {
 		return x.MapStringMessage
@@ -570,7 +518,6 @@ func (x *TestFieldTrack) GetMapStringMessage() map[string]*test.TestAllTypes_Nes
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetWeakMessage1() proto.Message {
 	var w protoimpl.WeakFields
 	if x != nil {
@@ -581,7 +528,6 @@ func (x *TestFieldTrack) GetWeakMessage1() proto.Message {
 }
 
 //go:nointerface
-
 func (x *TestFieldTrack) GetWeakMessage2() proto.Message {
 	var w protoimpl.WeakFields
 	if x != nil {
@@ -591,8 +537,6 @@ func (x *TestFieldTrack) GetWeakMessage2() proto.Message {
 	return protoimpl.X.GetWeak(w, 101, "goproto.proto.test.weak.WeakImportMessage2")
 }
 
-//go:nointerface
-
 func (x *TestFieldTrack) SetWeakMessage1(v proto.Message) {
 	var w *protoimpl.WeakFields
 	if x != nil {
@@ -601,8 +545,6 @@ func (x *TestFieldTrack) SetWeakMessage1(v proto.Message) {
 	}
 	protoimpl.X.SetWeak(w, 100, "goproto.proto.test.weak.WeakImportMessage1", v)
 }
-
-//go:nointerface
 
 func (x *TestFieldTrack) SetWeakMessage2(v proto.Message) {
 	var w *protoimpl.WeakFields
@@ -1004,22 +946,6 @@ func init() { file_internal_testprotos_fieldtrack_fieldtrack_proto_init() }
 func file_internal_testprotos_fieldtrack_fieldtrack_proto_init() {
 	if File_internal_testprotos_fieldtrack_fieldtrack_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_fieldtrack_fieldtrack_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*TestFieldTrack); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.weakFields
-			case 3:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

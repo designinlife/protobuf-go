@@ -19,15 +19,12 @@ import (
 )
 
 type Message struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
+	state           protoimpl.MessageState       `protogen:"open.v1"`
 	OptionalMessage *IrregularMessage            `protobuf:"bytes,1,opt,name=optional_message,json=optionalMessage" json:"optional_message,omitempty"`
 	RepeatedMessage []*IrregularMessage          `protobuf:"bytes,2,rep,name=repeated_message,json=repeatedMessage" json:"repeated_message,omitempty"`
 	RequiredMessage *IrregularMessage            `protobuf:"bytes,3,req,name=required_message,json=requiredMessage" json:"required_message,omitempty"`
 	MapMessage      map[string]*IrregularMessage `protobuf:"bytes,4,rep,name=map_message,json=mapMessage" json:"map_message,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	// Types that are assignable to Union:
+	// Types that are valid to be assigned to Union:
 	//
 	//	*Message_OneofMessage
 	//	*Message_OneofAberrantMessage
@@ -36,15 +33,15 @@ type Message struct {
 	RepeatedAberrantMessage []*AberrantMessage          `protobuf:"bytes,8,rep,name=repeated_aberrant_message,json=repeatedAberrantMessage" json:"repeated_aberrant_message,omitempty"`
 	RequiredAberrantMessage *AberrantMessage            `protobuf:"bytes,9,req,name=required_aberrant_message,json=requiredAberrantMessage" json:"required_aberrant_message,omitempty"`
 	MapAberrantMessage      map[string]*AberrantMessage `protobuf:"bytes,10,rep,name=map_aberrant_message,json=mapAberrantMessage" json:"map_aberrant_message,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *Message) Reset() {
 	*x = Message{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_irregular_test_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_irregular_test_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Message) String() string {
@@ -55,7 +52,7 @@ func (*Message) ProtoMessage() {}
 
 func (x *Message) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_irregular_test_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -98,23 +95,27 @@ func (x *Message) GetMapMessage() map[string]*IrregularMessage {
 	return nil
 }
 
-func (m *Message) GetUnion() isMessage_Union {
-	if m != nil {
-		return m.Union
+func (x *Message) GetUnion() isMessage_Union {
+	if x != nil {
+		return x.Union
 	}
 	return nil
 }
 
 func (x *Message) GetOneofMessage() *IrregularMessage {
-	if x, ok := x.GetUnion().(*Message_OneofMessage); ok {
-		return x.OneofMessage
+	if x != nil {
+		if x, ok := x.Union.(*Message_OneofMessage); ok {
+			return x.OneofMessage
+		}
 	}
 	return nil
 }
 
 func (x *Message) GetOneofAberrantMessage() *AberrantMessage {
-	if x, ok := x.GetUnion().(*Message_OneofAberrantMessage); ok {
-		return x.OneofAberrantMessage
+	if x != nil {
+		if x, ok := x.Union.(*Message_OneofAberrantMessage); ok {
+			return x.OneofAberrantMessage
+		}
 	}
 	return nil
 }
@@ -299,20 +300,6 @@ func file_internal_testprotos_irregular_test_proto_init() {
 		return
 	}
 	file_internal_testprotos_irregular_irregular_proto_init()
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_irregular_test_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*Message); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
 	file_internal_testprotos_irregular_test_proto_msgTypes[0].OneofWrappers = []any{
 		(*Message_OneofMessage)(nil),
 		(*Message_OneofAberrantMessage)(nil),

@@ -346,12 +346,11 @@ func (EnumContainerMessage1_EnumContainerMessage2_NestedEnumType2B) EnumDescript
 }
 
 type EnumContainerMessage1 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	DefaultDuplicate1 *EnumType2 `protobuf:"varint,1,opt,name=default_duplicate1,json=defaultDuplicate1,enum=goproto.protoc.protoeditions.EnumType2,def=1" json:"default_duplicate1,omitempty"`
-	DefaultDuplicate2 *EnumType2 `protobuf:"varint,2,opt,name=default_duplicate2,json=defaultDuplicate2,enum=goproto.protoc.protoeditions.EnumType2,def=1" json:"default_duplicate2,omitempty"`
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	DefaultDuplicate1 *EnumType2             `protobuf:"varint,1,opt,name=default_duplicate1,json=defaultDuplicate1,enum=goproto.protoc.protoeditions.EnumType2,def=1" json:"default_duplicate1,omitempty"`
+	DefaultDuplicate2 *EnumType2             `protobuf:"varint,2,opt,name=default_duplicate2,json=defaultDuplicate2,enum=goproto.protoc.protoeditions.EnumType2,def=1" json:"default_duplicate2,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 // Default values for EnumContainerMessage1 fields.
@@ -362,11 +361,9 @@ const (
 
 func (x *EnumContainerMessage1) Reset() {
 	*x = EnumContainerMessage1{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_protoeditions_enum_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_protoeditions_enum_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *EnumContainerMessage1) String() string {
@@ -377,7 +374,7 @@ func (*EnumContainerMessage1) ProtoMessage() {}
 
 func (x *EnumContainerMessage1) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_protoeditions_enum_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -407,18 +404,16 @@ func (x *EnumContainerMessage1) GetDefaultDuplicate2() EnumType2 {
 }
 
 type EnumContainerMessage1_EnumContainerMessage2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *EnumContainerMessage1_EnumContainerMessage2) Reset() {
 	*x = EnumContainerMessage1_EnumContainerMessage2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_protoeditions_enum_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_protoeditions_enum_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *EnumContainerMessage1_EnumContainerMessage2) String() string {
@@ -429,7 +424,7 @@ func (*EnumContainerMessage1_EnumContainerMessage2) ProtoMessage() {}
 
 func (x *EnumContainerMessage1_EnumContainerMessage2) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_protoeditions_enum_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -538,32 +533,6 @@ func init() { file_cmd_protoc_gen_go_testdata_protoeditions_enum_proto_init() }
 func file_cmd_protoc_gen_go_testdata_protoeditions_enum_proto_init() {
 	if File_cmd_protoc_gen_go_testdata_protoeditions_enum_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_cmd_protoc_gen_go_testdata_protoeditions_enum_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*EnumContainerMessage1); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_cmd_protoc_gen_go_testdata_protoeditions_enum_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*EnumContainerMessage1_EnumContainerMessage2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

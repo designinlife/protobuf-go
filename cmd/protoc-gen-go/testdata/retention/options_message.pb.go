@@ -17,22 +17,19 @@ import (
 
 // Retention attributes set on fields nested within a message
 type OptionsMessage struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	PlainField            *int32 `protobuf:"varint,1,opt,name=plain_field,json=plainField" json:"plain_field,omitempty"`
-	RuntimeRetentionField *int32 `protobuf:"varint,2,opt,name=runtime_retention_field,json=runtimeRetentionField" json:"runtime_retention_field,omitempty"`
-	SourceRetentionField  *int32 `protobuf:"varint,3,opt,name=source_retention_field,json=sourceRetentionField" json:"source_retention_field,omitempty"`
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	PlainField            *int32                 `protobuf:"varint,1,opt,name=plain_field,json=plainField" json:"plain_field,omitempty"`
+	RuntimeRetentionField *int32                 `protobuf:"varint,2,opt,name=runtime_retention_field,json=runtimeRetentionField" json:"runtime_retention_field,omitempty"`
+	SourceRetentionField  *int32                 `protobuf:"varint,3,opt,name=source_retention_field,json=sourceRetentionField" json:"source_retention_field,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *OptionsMessage) Reset() {
 	*x = OptionsMessage{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_retention_options_message_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_retention_options_message_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *OptionsMessage) String() string {
@@ -43,7 +40,7 @@ func (*OptionsMessage) ProtoMessage() {}
 
 func (x *OptionsMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_retention_options_message_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -213,20 +210,6 @@ func init() { file_cmd_protoc_gen_go_testdata_retention_options_message_proto_in
 func file_cmd_protoc_gen_go_testdata_retention_options_message_proto_init() {
 	if File_cmd_protoc_gen_go_testdata_retention_options_message_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_cmd_protoc_gen_go_testdata_retention_options_message_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*OptionsMessage); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

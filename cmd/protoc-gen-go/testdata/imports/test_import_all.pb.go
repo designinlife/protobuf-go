@@ -19,24 +19,21 @@ import (
 )
 
 type All struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Am1           *test_a_1.M1           `protobuf:"bytes,1,opt,name=am1,proto3" json:"am1,omitempty"`
+	Am2           *test_a_1.M2           `protobuf:"bytes,2,opt,name=am2,proto3" json:"am2,omitempty"`
+	Bm1           *test_b_1.M1           `protobuf:"bytes,5,opt,name=bm1,proto3" json:"bm1,omitempty"`
+	Bm2           *test_b_1.M2           `protobuf:"bytes,6,opt,name=bm2,proto3" json:"bm2,omitempty"`
+	Fmt           *fmt.M                 `protobuf:"bytes,7,opt,name=fmt,proto3" json:"fmt,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	Am1 *test_a_1.M1 `protobuf:"bytes,1,opt,name=am1,proto3" json:"am1,omitempty"`
-	Am2 *test_a_1.M2 `protobuf:"bytes,2,opt,name=am2,proto3" json:"am2,omitempty"`
-	Bm1 *test_b_1.M1 `protobuf:"bytes,5,opt,name=bm1,proto3" json:"bm1,omitempty"`
-	Bm2 *test_b_1.M2 `protobuf:"bytes,6,opt,name=bm2,proto3" json:"bm2,omitempty"`
-	Fmt *fmt.M       `protobuf:"bytes,7,opt,name=fmt,proto3" json:"fmt,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *All) Reset() {
 	*x = All{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_imports_test_import_all_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_imports_test_import_all_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *All) String() string {
@@ -47,7 +44,7 @@ func (*All) ProtoMessage() {}
 
 func (x *All) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_imports_test_import_all_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -183,20 +180,6 @@ func init() { file_cmd_protoc_gen_go_testdata_imports_test_import_all_proto_init
 func file_cmd_protoc_gen_go_testdata_imports_test_import_all_proto_init() {
 	if File_cmd_protoc_gen_go_testdata_imports_test_import_all_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_cmd_protoc_gen_go_testdata_imports_test_import_all_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*All); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

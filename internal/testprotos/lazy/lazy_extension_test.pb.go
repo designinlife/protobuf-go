@@ -159,20 +159,17 @@ func (PipistrelleSpecies) EnumDescriptor() ([]byte, []int) {
 
 // This message contains a message set.
 type Holder struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Data          *messagesetpb.MessageSet `protobuf:"bytes,1,opt,name=data" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	Data *messagesetpb.MessageSet `protobuf:"bytes,1,opt,name=data" json:"data,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Holder) Reset() {
 	*x = Holder{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Holder) String() string {
@@ -183,7 +180,7 @@ func (*Holder) ProtoMessage() {}
 
 func (x *Holder) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -207,20 +204,17 @@ func (x *Holder) GetData() *messagesetpb.MessageSet {
 
 // This message may be inserted into a message set.
 type Rabbit struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          *string                `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	Name *string `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Rabbit) Reset() {
 	*x = Rabbit{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Rabbit) String() string {
@@ -231,7 +225,7 @@ func (*Rabbit) ProtoMessage() {}
 
 func (x *Rabbit) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -254,20 +248,17 @@ func (x *Rabbit) GetName() string {
 }
 
 type FlyingFox struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Species       *FlyingFoxSpecies      `protobuf:"varint,1,opt,name=species,enum=lazy_extension_test.FlyingFoxSpecies" json:"species,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	Species *FlyingFoxSpecies `protobuf:"varint,1,opt,name=species,enum=lazy_extension_test.FlyingFoxSpecies" json:"species,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *FlyingFox) Reset() {
 	*x = FlyingFox{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *FlyingFox) String() string {
@@ -278,7 +269,7 @@ func (*FlyingFox) ProtoMessage() {}
 
 func (x *FlyingFox) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -301,21 +292,18 @@ func (x *FlyingFox) GetSpecies() FlyingFoxSpecies {
 }
 
 type Tree struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Eucalyptus      *bool                  `protobuf:"varint,1,opt,name=eucalyptus" json:"eucalyptus,omitempty"`
 	extensionFields protoimpl.ExtensionFields
-
-	Eucalyptus *bool `protobuf:"varint,1,opt,name=eucalyptus" json:"eucalyptus,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *Tree) Reset() {
 	*x = Tree{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Tree) String() string {
@@ -326,7 +314,7 @@ func (*Tree) ProtoMessage() {}
 
 func (x *Tree) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -349,20 +337,17 @@ func (x *Tree) GetEucalyptus() bool {
 }
 
 type Pipistrelle struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Species       *PipistrelleSpecies    `protobuf:"varint,1,opt,name=species,enum=lazy_extension_test.PipistrelleSpecies" json:"species,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	Species *PipistrelleSpecies `protobuf:"varint,1,opt,name=species,enum=lazy_extension_test.PipistrelleSpecies" json:"species,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Pipistrelle) Reset() {
 	*x = Pipistrelle{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Pipistrelle) String() string {
@@ -373,7 +358,7 @@ func (*Pipistrelle) ProtoMessage() {}
 
 func (x *Pipistrelle) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -396,20 +381,17 @@ func (x *Pipistrelle) GetSpecies() PipistrelleSpecies {
 }
 
 type Pipistrelles struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Species       *PipistrelleSpecies    `protobuf:"varint,1,opt,name=species,enum=lazy_extension_test.PipistrelleSpecies" json:"species,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	Species *PipistrelleSpecies `protobuf:"varint,1,opt,name=species,enum=lazy_extension_test.PipistrelleSpecies" json:"species,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Pipistrelles) Reset() {
 	*x = Pipistrelles{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Pipistrelles) String() string {
@@ -420,7 +402,7 @@ func (*Pipistrelles) ProtoMessage() {}
 
 func (x *Pipistrelles) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -444,18 +426,16 @@ func (x *Pipistrelles) GetSpecies() PipistrelleSpecies {
 
 // And the ugly version that is not encouraged
 type BatNest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *BatNest) Reset() {
 	*x = BatNest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *BatNest) String() string {
@@ -466,7 +446,7 @@ func (*BatNest) ProtoMessage() {}
 
 func (x *BatNest) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -748,94 +728,6 @@ func init() { file_internal_testprotos_lazy_lazy_extension_test_proto_init() }
 func file_internal_testprotos_lazy_lazy_extension_test_proto_init() {
 	if File_internal_testprotos_lazy_lazy_extension_test_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*Holder); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*Rabbit); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[2].Exporter = func(v any, i int) any {
-			switch v := v.(*FlyingFox); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[3].Exporter = func(v any, i int) any {
-			switch v := v.(*Tree); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[4].Exporter = func(v any, i int) any {
-			switch v := v.(*Pipistrelle); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[5].Exporter = func(v any, i int) any {
-			switch v := v.(*Pipistrelles); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_lazy_lazy_extension_test_proto_msgTypes[6].Exporter = func(v any, i int) any {
-			switch v := v.(*BatNest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

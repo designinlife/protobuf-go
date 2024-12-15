@@ -15,21 +15,18 @@ import (
 )
 
 type Layer1 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	L2            *Layer1_Layer2         `protobuf:"bytes,1,opt,name=l2" json:"l2,omitempty"`
+	L3            *Layer1_Layer2_Layer3  `protobuf:"bytes,2,opt,name=l3" json:"l3,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	L2 *Layer1_Layer2        `protobuf:"bytes,1,opt,name=l2" json:"l2,omitempty"`
-	L3 *Layer1_Layer2_Layer3 `protobuf:"bytes,2,opt,name=l3" json:"l3,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Layer1) Reset() {
 	*x = Layer1{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Layer1) String() string {
@@ -40,7 +37,7 @@ func (*Layer1) ProtoMessage() {}
 
 func (x *Layer1) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -70,20 +67,17 @@ func (x *Layer1) GetL3() *Layer1_Layer2_Layer3 {
 }
 
 type Layer1_Layer2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	L3            *Layer1_Layer2_Layer3  `protobuf:"bytes,1,opt,name=l3" json:"l3,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	L3 *Layer1_Layer2_Layer3 `protobuf:"bytes,1,opt,name=l3" json:"l3,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Layer1_Layer2) Reset() {
 	*x = Layer1_Layer2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Layer1_Layer2) String() string {
@@ -94,7 +88,7 @@ func (*Layer1_Layer2) ProtoMessage() {}
 
 func (x *Layer1_Layer2) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -117,18 +111,16 @@ func (x *Layer1_Layer2) GetL3() *Layer1_Layer2_Layer3 {
 }
 
 type Layer1_Layer2_Layer3 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Layer1_Layer2_Layer3) Reset() {
 	*x = Layer1_Layer2_Layer3{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Layer1_Layer2_Layer3) String() string {
@@ -139,7 +131,7 @@ func (*Layer1_Layer2_Layer3) ProtoMessage() {}
 
 func (x *Layer1_Layer2_Layer3) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -218,44 +210,6 @@ func init() { file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_prot
 func file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_init() {
 	if File_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*Layer1); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*Layer1_Layer2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_cmd_protoc_gen_go_testdata_protoeditions_nested_messages_proto_msgTypes[2].Exporter = func(v any, i int) any {
-			switch v := v.(*Layer1_Layer2_Layer3); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

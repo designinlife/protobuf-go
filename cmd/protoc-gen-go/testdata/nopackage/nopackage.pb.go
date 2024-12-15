@@ -68,12 +68,11 @@ func (Enum) EnumDescriptor() ([]byte, []int) {
 }
 
 type Message struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	StringField   *string                `protobuf:"bytes,1,opt,name=string_field,json=stringField" json:"string_field,omitempty"`
+	EnumField     *Enum                  `protobuf:"varint,2,opt,name=enum_field,json=enumField,enum=Enum,def=0" json:"enum_field,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	StringField *string `protobuf:"bytes,1,opt,name=string_field,json=stringField" json:"string_field,omitempty"`
-	EnumField   *Enum   `protobuf:"varint,2,opt,name=enum_field,json=enumField,enum=Enum,def=0" json:"enum_field,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 // Default values for Message fields.
@@ -83,11 +82,9 @@ const (
 
 func (x *Message) Reset() {
 	*x = Message{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_nopackage_nopackage_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_nopackage_nopackage_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Message) String() string {
@@ -98,7 +95,7 @@ func (*Message) ProtoMessage() {}
 
 func (x *Message) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_nopackage_nopackage_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -174,20 +171,6 @@ func init() { file_cmd_protoc_gen_go_testdata_nopackage_nopackage_proto_init() }
 func file_cmd_protoc_gen_go_testdata_nopackage_nopackage_proto_init() {
 	if File_cmd_protoc_gen_go_testdata_nopackage_nopackage_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_cmd_protoc_gen_go_testdata_nopackage_nopackage_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*Message); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

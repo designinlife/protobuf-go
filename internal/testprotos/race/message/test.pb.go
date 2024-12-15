@@ -15,21 +15,18 @@ import (
 )
 
 type MyMessage struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	I32             *int32                 `protobuf:"varint,1,opt,name=i32" json:"i32,omitempty"`
 	extensionFields protoimpl.ExtensionFields
-
-	I32 *int32 `protobuf:"varint,1,opt,name=i32" json:"i32,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *MyMessage) Reset() {
 	*x = MyMessage{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_race_message_test_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_race_message_test_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *MyMessage) String() string {
@@ -40,7 +37,7 @@ func (*MyMessage) ProtoMessage() {}
 
 func (x *MyMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_race_message_test_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -107,22 +104,6 @@ func init() { file_internal_testprotos_race_message_test_proto_init() }
 func file_internal_testprotos_race_message_test_proto_init() {
 	if File_internal_testprotos_race_message_test_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_race_message_test_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*MyMessage); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

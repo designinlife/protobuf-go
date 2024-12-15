@@ -15,23 +15,20 @@ import (
 )
 
 type Foo struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// Types that are assignable to Bar:
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Bar:
 	//
 	//	*Foo_GetBar
-	Bar isFoo_Bar `protobuf_oneof:"bar"`
+	Bar           isFoo_Bar `protobuf_oneof:"bar"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Foo) Reset() {
 	*x = Foo{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_issue780_oneof_conflict_test_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_issue780_oneof_conflict_test_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Foo) String() string {
@@ -42,7 +39,7 @@ func (*Foo) ProtoMessage() {}
 
 func (x *Foo) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_issue780_oneof_conflict_test_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -57,16 +54,18 @@ func (*Foo) Descriptor() ([]byte, []int) {
 	return file_cmd_protoc_gen_go_testdata_issue780_oneof_conflict_test_proto_rawDescGZIP(), []int{0}
 }
 
-func (m *Foo) GetBar() isFoo_Bar {
-	if m != nil {
-		return m.Bar
+func (x *Foo) GetBar() isFoo_Bar {
+	if x != nil {
+		return x.Bar
 	}
 	return nil
 }
 
 func (x *Foo) GetGetBar() string {
-	if x, ok := x.GetBar().(*Foo_GetBar); ok {
-		return x.GetBar
+	if x != nil {
+		if x, ok := x.Bar.(*Foo_GetBar); ok {
+			return x.GetBar
+		}
 	}
 	return ""
 }
@@ -127,20 +126,6 @@ func init() { file_cmd_protoc_gen_go_testdata_issue780_oneof_conflict_test_proto
 func file_cmd_protoc_gen_go_testdata_issue780_oneof_conflict_test_proto_init() {
 	if File_cmd_protoc_gen_go_testdata_issue780_oneof_conflict_test_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_cmd_protoc_gen_go_testdata_issue780_oneof_conflict_test_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*Foo); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	file_cmd_protoc_gen_go_testdata_issue780_oneof_conflict_test_proto_msgTypes[0].OneofWrappers = []any{
 		(*Foo_GetBar)(nil),

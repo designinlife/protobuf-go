@@ -15,19 +15,17 @@ import (
 )
 
 type MessageSet struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
+	state           protoimpl.MessageState `protogen:"open.v1"`
 	extensionFields protoimpl.ExtensionFields
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *MessageSet) Reset() {
 	*x = MessageSet{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_messageset_messagesetpb_message_set_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_messageset_messagesetpb_message_set_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *MessageSet) String() string {
@@ -38,7 +36,7 @@ func (*MessageSet) ProtoMessage() {}
 
 func (x *MessageSet) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_messageset_messagesetpb_message_set_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -54,20 +52,17 @@ func (*MessageSet) Descriptor() ([]byte, []int) {
 }
 
 type MessageSetContainer struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	MessageSet    *MessageSet            `protobuf:"bytes,1,opt,name=message_set,json=messageSet" json:"message_set,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	MessageSet *MessageSet `protobuf:"bytes,1,opt,name=message_set,json=messageSet" json:"message_set,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *MessageSetContainer) Reset() {
 	*x = MessageSetContainer{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_messageset_messagesetpb_message_set_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_messageset_messagesetpb_message_set_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *MessageSetContainer) String() string {
@@ -78,7 +73,7 @@ func (*MessageSetContainer) ProtoMessage() {}
 
 func (x *MessageSetContainer) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_messageset_messagesetpb_message_set_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -120,7 +115,8 @@ var file_internal_testprotos_messageset_messagesetpb_message_set_proto_rawDesc =
 	0x6c, 0x61, 0x6e, 0x67, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
 	0x66, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x2f, 0x74, 0x65, 0x73, 0x74, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x65, 0x74,
-	0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x65, 0x74, 0x70, 0x62,
+	0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x73, 0x65, 0x74, 0x70, 0x62, 0x62, 0x08, 0x65,
+	0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x70, 0xe8, 0x07,
 }
 
 var (
@@ -153,34 +149,6 @@ func init() { file_internal_testprotos_messageset_messagesetpb_message_set_proto
 func file_internal_testprotos_messageset_messagesetpb_message_set_proto_init() {
 	if File_internal_testprotos_messageset_messagesetpb_message_set_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_messageset_messagesetpb_message_set_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*MessageSet); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_messageset_messagesetpb_message_set_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*MessageSetContainer); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

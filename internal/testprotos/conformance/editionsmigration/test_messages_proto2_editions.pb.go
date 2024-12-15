@@ -230,11 +230,7 @@ func (TestAllRequiredTypesProto2_NestedEnum) EnumDescriptor() ([]byte, []int) {
 // could trigger bugs that occur in any message type in this file.  We verify
 // this stays true in a unit test.
 type TestAllTypesProto2 struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
-	extensionFields protoimpl.ExtensionFields
-
+	state protoimpl.MessageState `protogen:"open.v1"`
 	// Singular
 	OptionalInt32          *int32                            `protobuf:"varint,1,opt,name=optional_int32,json=optionalInt32" json:"optional_int32,omitempty"`
 	OptionalInt64          *int64                            `protobuf:"varint,2,opt,name=optional_int64,json=optionalInt64" json:"optional_int64,omitempty"`
@@ -330,7 +326,7 @@ type TestAllTypesProto2 struct {
 	MapStringForeignMessage map[string]*ForeignMessageProto2             `protobuf:"bytes,72,rep,name=map_string_foreign_message,json=mapStringForeignMessage" json:"map_string_foreign_message,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	MapStringNestedEnum     map[string]TestAllTypesProto2_NestedEnum     `protobuf:"bytes,73,rep,name=map_string_nested_enum,json=mapStringNestedEnum" json:"map_string_nested_enum,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value,enum=protobuf_test_messages.editions.proto2.TestAllTypesProto2_NestedEnum"`
 	MapStringForeignEnum    map[string]ForeignEnumProto2                 `protobuf:"bytes,74,rep,name=map_string_foreign_enum,json=mapStringForeignEnum" json:"map_string_foreign_enum,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"varint,2,opt,name=value,enum=protobuf_test_messages.editions.proto2.ForeignEnumProto2"`
-	// Types that are assignable to OneofField:
+	// Types that are valid to be assigned to OneofField:
 	//
 	//	*TestAllTypesProto2_OneofUint32
 	//	*TestAllTypesProto2_OneofNestedMessage
@@ -362,24 +358,27 @@ type TestAllTypesProto2 struct {
 	DefaultBytes    []byte   `protobuf:"bytes,255,opt,name=default_bytes,json=defaultBytes,def=joshua" json:"default_bytes,omitempty"`
 	// Test field-name-to-JSON-name convention.
 	// (protobuf says names can be any valid C/C++ identifier.)
-	Fieldname1    *int32 `protobuf:"varint,401,opt,name=fieldname1" json:"fieldname1,omitempty"`
-	FieldName2    *int32 `protobuf:"varint,402,opt,name=field_name2,json=fieldName2" json:"field_name2,omitempty"`
-	XFieldName3   *int32 `protobuf:"varint,403,opt,name=_field_name3,json=FieldName3" json:"_field_name3,omitempty"`
-	Field_Name4_  *int32 `protobuf:"varint,404,opt,name=field__name4_,json=fieldName4" json:"field__name4_,omitempty"`
-	Field0Name5   *int32 `protobuf:"varint,405,opt,name=field0name5" json:"field0name5,omitempty"`
-	Field_0Name6  *int32 `protobuf:"varint,406,opt,name=field_0_name6,json=field0Name6" json:"field_0_name6,omitempty"`
-	FieldName7    *int32 `protobuf:"varint,407,opt,name=fieldName7" json:"fieldName7,omitempty"`
-	FieldName8    *int32 `protobuf:"varint,408,opt,name=FieldName8" json:"FieldName8,omitempty"`
-	Field_Name9   *int32 `protobuf:"varint,409,opt,name=field_Name9,json=fieldName9" json:"field_Name9,omitempty"`
-	Field_Name10  *int32 `protobuf:"varint,410,opt,name=Field_Name10,json=FieldName10" json:"Field_Name10,omitempty"`
-	FIELD_NAME11  *int32 `protobuf:"varint,411,opt,name=FIELD_NAME11,json=FIELDNAME11" json:"FIELD_NAME11,omitempty"`
-	FIELDName12   *int32 `protobuf:"varint,412,opt,name=FIELD_name12,json=FIELDName12" json:"FIELD_name12,omitempty"`
-	XFieldName13  *int32 `protobuf:"varint,413,opt,name=__field_name13,json=FieldName13" json:"__field_name13,omitempty"`
-	X_FieldName14 *int32 `protobuf:"varint,414,opt,name=__Field_name14,json=FieldName14" json:"__Field_name14,omitempty"`
-	Field_Name15  *int32 `protobuf:"varint,415,opt,name=field__name15,json=fieldName15" json:"field__name15,omitempty"`
-	Field__Name16 *int32 `protobuf:"varint,416,opt,name=field__Name16,json=fieldName16" json:"field__Name16,omitempty"`
-	FieldName17__ *int32 `protobuf:"varint,417,opt,name=field_name17__,json=fieldName17" json:"field_name17__,omitempty"`
-	FieldName18__ *int32 `protobuf:"varint,418,opt,name=Field_name18__,json=FieldName18" json:"Field_name18__,omitempty"`
+	Fieldname1      *int32 `protobuf:"varint,401,opt,name=fieldname1" json:"fieldname1,omitempty"`
+	FieldName2      *int32 `protobuf:"varint,402,opt,name=field_name2,json=fieldName2" json:"field_name2,omitempty"`
+	XFieldName3     *int32 `protobuf:"varint,403,opt,name=_field_name3,json=FieldName3" json:"_field_name3,omitempty"`
+	Field_Name4_    *int32 `protobuf:"varint,404,opt,name=field__name4_,json=fieldName4" json:"field__name4_,omitempty"`
+	Field0Name5     *int32 `protobuf:"varint,405,opt,name=field0name5" json:"field0name5,omitempty"`
+	Field_0Name6    *int32 `protobuf:"varint,406,opt,name=field_0_name6,json=field0Name6" json:"field_0_name6,omitempty"`
+	FieldName7      *int32 `protobuf:"varint,407,opt,name=fieldName7" json:"fieldName7,omitempty"`
+	FieldName8      *int32 `protobuf:"varint,408,opt,name=FieldName8" json:"FieldName8,omitempty"`
+	Field_Name9     *int32 `protobuf:"varint,409,opt,name=field_Name9,json=fieldName9" json:"field_Name9,omitempty"`
+	Field_Name10    *int32 `protobuf:"varint,410,opt,name=Field_Name10,json=FieldName10" json:"Field_Name10,omitempty"`
+	FIELD_NAME11    *int32 `protobuf:"varint,411,opt,name=FIELD_NAME11,json=FIELDNAME11" json:"FIELD_NAME11,omitempty"`
+	FIELDName12     *int32 `protobuf:"varint,412,opt,name=FIELD_name12,json=FIELDName12" json:"FIELD_name12,omitempty"`
+	XFieldName13    *int32 `protobuf:"varint,413,opt,name=__field_name13,json=FieldName13" json:"__field_name13,omitempty"`
+	X_FieldName14   *int32 `protobuf:"varint,414,opt,name=__Field_name14,json=FieldName14" json:"__Field_name14,omitempty"`
+	Field_Name15    *int32 `protobuf:"varint,415,opt,name=field__name15,json=fieldName15" json:"field__name15,omitempty"`
+	Field__Name16   *int32 `protobuf:"varint,416,opt,name=field__Name16,json=fieldName16" json:"field__Name16,omitempty"`
+	FieldName17__   *int32 `protobuf:"varint,417,opt,name=field_name17__,json=fieldName17" json:"field_name17__,omitempty"`
+	FieldName18__   *int32 `protobuf:"varint,418,opt,name=Field_name18__,json=FieldName18" json:"Field_name18__,omitempty"`
+	extensionFields protoimpl.ExtensionFields
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 // Default values for TestAllTypesProto2 fields.
@@ -407,11 +406,9 @@ var (
 
 func (x *TestAllTypesProto2) Reset() {
 	*x = TestAllTypesProto2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2) String() string {
@@ -422,7 +419,7 @@ func (*TestAllTypesProto2) ProtoMessage() {}
 
 func (x *TestAllTypesProto2) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1067,72 +1064,90 @@ func (x *TestAllTypesProto2) GetMapStringForeignEnum() map[string]ForeignEnumPro
 	return nil
 }
 
-func (m *TestAllTypesProto2) GetOneofField() isTestAllTypesProto2_OneofField {
-	if m != nil {
-		return m.OneofField
+func (x *TestAllTypesProto2) GetOneofField() isTestAllTypesProto2_OneofField {
+	if x != nil {
+		return x.OneofField
 	}
 	return nil
 }
 
 func (x *TestAllTypesProto2) GetOneofUint32() uint32 {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofUint32); ok {
-		return x.OneofUint32
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofUint32); ok {
+			return x.OneofUint32
+		}
 	}
 	return 0
 }
 
 func (x *TestAllTypesProto2) GetOneofNestedMessage() *TestAllTypesProto2_NestedMessage {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofNestedMessage); ok {
-		return x.OneofNestedMessage
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofNestedMessage); ok {
+			return x.OneofNestedMessage
+		}
 	}
 	return nil
 }
 
 func (x *TestAllTypesProto2) GetOneofString() string {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofString); ok {
-		return x.OneofString
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofString); ok {
+			return x.OneofString
+		}
 	}
 	return ""
 }
 
 func (x *TestAllTypesProto2) GetOneofBytes() []byte {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofBytes); ok {
-		return x.OneofBytes
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofBytes); ok {
+			return x.OneofBytes
+		}
 	}
 	return nil
 }
 
 func (x *TestAllTypesProto2) GetOneofBool() bool {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofBool); ok {
-		return x.OneofBool
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofBool); ok {
+			return x.OneofBool
+		}
 	}
 	return false
 }
 
 func (x *TestAllTypesProto2) GetOneofUint64() uint64 {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofUint64); ok {
-		return x.OneofUint64
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofUint64); ok {
+			return x.OneofUint64
+		}
 	}
 	return 0
 }
 
 func (x *TestAllTypesProto2) GetOneofFloat() float32 {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofFloat); ok {
-		return x.OneofFloat
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofFloat); ok {
+			return x.OneofFloat
+		}
 	}
 	return 0
 }
 
 func (x *TestAllTypesProto2) GetOneofDouble() float64 {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofDouble); ok {
-		return x.OneofDouble
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofDouble); ok {
+			return x.OneofDouble
+		}
 	}
 	return 0
 }
 
 func (x *TestAllTypesProto2) GetOneofEnum() TestAllTypesProto2_NestedEnum {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofEnum); ok {
-		return x.OneofEnum
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofEnum); ok {
+			return x.OneofEnum
+		}
 	}
 	return TestAllTypesProto2_FOO
 }
@@ -1441,20 +1456,17 @@ func (*TestAllTypesProto2_OneofDouble) isTestAllTypesProto2_OneofField() {}
 func (*TestAllTypesProto2_OneofEnum) isTestAllTypesProto2_OneofField() {}
 
 type ForeignMessageProto2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	C             *int32                 `protobuf:"varint,1,opt,name=c" json:"c,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	C *int32 `protobuf:"varint,1,opt,name=c" json:"c,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ForeignMessageProto2) Reset() {
 	*x = ForeignMessageProto2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *ForeignMessageProto2) String() string {
@@ -1465,7 +1477,7 @@ func (*ForeignMessageProto2) ProtoMessage() {}
 
 func (x *ForeignMessageProto2) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1488,21 +1500,18 @@ func (x *ForeignMessageProto2) GetC() int32 {
 }
 
 type GroupField struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	GroupInt32    *int32                 `protobuf:"varint,122,opt,name=group_int32,json=groupInt32" json:"group_int32,omitempty"`
+	GroupUint32   *uint32                `protobuf:"varint,123,opt,name=group_uint32,json=groupUint32" json:"group_uint32,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	GroupInt32  *int32  `protobuf:"varint,122,opt,name=group_int32,json=groupInt32" json:"group_int32,omitempty"`
-	GroupUint32 *uint32 `protobuf:"varint,123,opt,name=group_uint32,json=groupUint32" json:"group_uint32,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *GroupField) Reset() {
 	*x = GroupField{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *GroupField) String() string {
@@ -1513,7 +1522,7 @@ func (*GroupField) ProtoMessage() {}
 
 func (x *GroupField) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1543,25 +1552,22 @@ func (x *GroupField) GetGroupUint32() uint32 {
 }
 
 type UnknownToTestAllTypes struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
+	state          protoimpl.MessageState               `protogen:"open.v1"`
 	OptionalInt32  *int32                               `protobuf:"varint,1001,opt,name=optional_int32,json=optionalInt32" json:"optional_int32,omitempty"`
 	OptionalString *string                              `protobuf:"bytes,1002,opt,name=optional_string,json=optionalString" json:"optional_string,omitempty"`
 	NestedMessage  *ForeignMessageProto2                `protobuf:"bytes,1003,opt,name=nested_message,json=nestedMessage" json:"nested_message,omitempty"`
 	Optionalgroup  *UnknownToTestAllTypes_OptionalGroup `protobuf:"group,1004,opt,name=OptionalGroup,json=optionalgroup" json:"optionalgroup,omitempty"`
 	OptionalBool   *bool                                `protobuf:"varint,1006,opt,name=optional_bool,json=optionalBool" json:"optional_bool,omitempty"`
 	RepeatedInt32  []int32                              `protobuf:"varint,1011,rep,name=repeated_int32,json=repeatedInt32" json:"repeated_int32,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *UnknownToTestAllTypes) Reset() {
 	*x = UnknownToTestAllTypes{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *UnknownToTestAllTypes) String() string {
@@ -1572,7 +1578,7 @@ func (*UnknownToTestAllTypes) ProtoMessage() {}
 
 func (x *UnknownToTestAllTypes) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1630,18 +1636,16 @@ func (x *UnknownToTestAllTypes) GetRepeatedInt32() []int32 {
 }
 
 type NullHypothesisProto2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *NullHypothesisProto2) Reset() {
 	*x = NullHypothesisProto2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *NullHypothesisProto2) String() string {
@@ -1652,7 +1656,7 @@ func (*NullHypothesisProto2) ProtoMessage() {}
 
 func (x *NullHypothesisProto2) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1668,18 +1672,16 @@ func (*NullHypothesisProto2) Descriptor() ([]byte, []int) {
 }
 
 type EnumOnlyProto2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *EnumOnlyProto2) Reset() {
 	*x = EnumOnlyProto2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *EnumOnlyProto2) String() string {
@@ -1690,7 +1692,7 @@ func (*EnumOnlyProto2) ProtoMessage() {}
 
 func (x *EnumOnlyProto2) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1706,20 +1708,17 @@ func (*EnumOnlyProto2) Descriptor() ([]byte, []int) {
 }
 
 type OneStringProto2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Data          *string                `protobuf:"bytes,1,opt,name=data" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	Data *string `protobuf:"bytes,1,opt,name=data" json:"data,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *OneStringProto2) Reset() {
 	*x = OneStringProto2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *OneStringProto2) String() string {
@@ -1730,7 +1729,7 @@ func (*OneStringProto2) ProtoMessage() {}
 
 func (x *OneStringProto2) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1753,22 +1752,19 @@ func (x *OneStringProto2) GetData() string {
 }
 
 type ProtoWithKeywords struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Inline        *int32                 `protobuf:"varint,1,opt,name=inline" json:"inline,omitempty"`
+	Concept       *string                `protobuf:"bytes,2,opt,name=concept" json:"concept,omitempty"`
+	Requires      []string               `protobuf:"bytes,3,rep,name=requires" json:"requires,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	Inline   *int32   `protobuf:"varint,1,opt,name=inline" json:"inline,omitempty"`
-	Concept  *string  `protobuf:"bytes,2,opt,name=concept" json:"concept,omitempty"`
-	Requires []string `protobuf:"bytes,3,rep,name=requires" json:"requires,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProtoWithKeywords) Reset() {
 	*x = ProtoWithKeywords{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *ProtoWithKeywords) String() string {
@@ -1779,7 +1775,7 @@ func (*ProtoWithKeywords) ProtoMessage() {}
 
 func (x *ProtoWithKeywords) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[7]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1816,11 +1812,7 @@ func (x *ProtoWithKeywords) GetRequires() []string {
 }
 
 type TestAllRequiredTypesProto2 struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
-	extensionFields protoimpl.ExtensionFields
-
+	state protoimpl.MessageState `protogen:"open.v1"`
 	// Singular
 	RequiredInt32            *int32                                    `protobuf:"varint,1,req,name=required_int32,json=requiredInt32" json:"required_int32,omitempty"`
 	RequiredInt64            *int64                                    `protobuf:"varint,2,req,name=required_int64,json=requiredInt64" json:"required_int64,omitempty"`
@@ -1862,6 +1854,9 @@ type TestAllRequiredTypesProto2 struct {
 	DefaultBool     *bool    `protobuf:"varint,253,req,name=default_bool,json=defaultBool,def=1" json:"default_bool,omitempty"`
 	DefaultString   *string  `protobuf:"bytes,254,req,name=default_string,json=defaultString,def=Rosebud" json:"default_string,omitempty"`
 	DefaultBytes    []byte   `protobuf:"bytes,255,req,name=default_bytes,json=defaultBytes,def=joshua" json:"default_bytes,omitempty"`
+	extensionFields protoimpl.ExtensionFields
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 // Default values for TestAllRequiredTypesProto2 fields.
@@ -1889,11 +1884,9 @@ var (
 
 func (x *TestAllRequiredTypesProto2) Reset() {
 	*x = TestAllRequiredTypesProto2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[8]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllRequiredTypesProto2) String() string {
@@ -1904,7 +1897,7 @@ func (*TestAllRequiredTypesProto2) ProtoMessage() {}
 
 func (x *TestAllRequiredTypesProto2) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[8]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2193,21 +2186,18 @@ func (x *TestAllRequiredTypesProto2) GetDefaultBytes() []byte {
 }
 
 type TestAllTypesProto2_NestedMessage struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             *int32                 `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
+	Corecursive   *TestAllTypesProto2    `protobuf:"bytes,2,opt,name=corecursive" json:"corecursive,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	A           *int32              `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
-	Corecursive *TestAllTypesProto2 `protobuf:"bytes,2,opt,name=corecursive" json:"corecursive,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllTypesProto2_NestedMessage) Reset() {
 	*x = TestAllTypesProto2_NestedMessage{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[9]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2_NestedMessage) String() string {
@@ -2218,7 +2208,7 @@ func (*TestAllTypesProto2_NestedMessage) ProtoMessage() {}
 
 func (x *TestAllTypesProto2_NestedMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[9]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2249,21 +2239,18 @@ func (x *TestAllTypesProto2_NestedMessage) GetCorecursive() *TestAllTypesProto2 
 
 // groups
 type TestAllTypesProto2_Data struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	GroupInt32    *int32                 `protobuf:"varint,202,opt,name=group_int32,json=groupInt32" json:"group_int32,omitempty"`
+	GroupUint32   *uint32                `protobuf:"varint,203,opt,name=group_uint32,json=groupUint32" json:"group_uint32,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	GroupInt32  *int32  `protobuf:"varint,202,opt,name=group_int32,json=groupInt32" json:"group_int32,omitempty"`
-	GroupUint32 *uint32 `protobuf:"varint,203,opt,name=group_uint32,json=groupUint32" json:"group_uint32,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllTypesProto2_Data) Reset() {
 	*x = TestAllTypesProto2_Data{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[29]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2_Data) String() string {
@@ -2274,7 +2261,7 @@ func (*TestAllTypesProto2_Data) ProtoMessage() {}
 
 func (x *TestAllTypesProto2_Data) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[29]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2304,21 +2291,18 @@ func (x *TestAllTypesProto2_Data) GetGroupUint32() uint32 {
 }
 
 type TestAllTypesProto2_MultiWordGroupField struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	GroupInt32    *int32                 `protobuf:"varint,205,opt,name=group_int32,json=groupInt32" json:"group_int32,omitempty"`
+	GroupUint32   *uint32                `protobuf:"varint,206,opt,name=group_uint32,json=groupUint32" json:"group_uint32,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	GroupInt32  *int32  `protobuf:"varint,205,opt,name=group_int32,json=groupInt32" json:"group_int32,omitempty"`
-	GroupUint32 *uint32 `protobuf:"varint,206,opt,name=group_uint32,json=groupUint32" json:"group_uint32,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllTypesProto2_MultiWordGroupField) Reset() {
 	*x = TestAllTypesProto2_MultiWordGroupField{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[30]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2_MultiWordGroupField) String() string {
@@ -2329,7 +2313,7 @@ func (*TestAllTypesProto2_MultiWordGroupField) ProtoMessage() {}
 
 func (x *TestAllTypesProto2_MultiWordGroupField) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[30]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2360,19 +2344,17 @@ func (x *TestAllTypesProto2_MultiWordGroupField) GetGroupUint32() uint32 {
 
 // message_set test case.
 type TestAllTypesProto2_MessageSetCorrect struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
+	state           protoimpl.MessageState `protogen:"open.v1"`
 	extensionFields protoimpl.ExtensionFields
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *TestAllTypesProto2_MessageSetCorrect) Reset() {
 	*x = TestAllTypesProto2_MessageSetCorrect{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[31]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2_MessageSetCorrect) String() string {
@@ -2383,7 +2365,7 @@ func (*TestAllTypesProto2_MessageSetCorrect) ProtoMessage() {}
 
 func (x *TestAllTypesProto2_MessageSetCorrect) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[31]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2399,20 +2381,17 @@ func (*TestAllTypesProto2_MessageSetCorrect) Descriptor() ([]byte, []int) {
 }
 
 type TestAllTypesProto2_MessageSetCorrectExtension1 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Str           *string                `protobuf:"bytes,25,opt,name=str" json:"str,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	Str *string `protobuf:"bytes,25,opt,name=str" json:"str,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllTypesProto2_MessageSetCorrectExtension1) Reset() {
 	*x = TestAllTypesProto2_MessageSetCorrectExtension1{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[32]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2_MessageSetCorrectExtension1) String() string {
@@ -2423,7 +2402,7 @@ func (*TestAllTypesProto2_MessageSetCorrectExtension1) ProtoMessage() {}
 
 func (x *TestAllTypesProto2_MessageSetCorrectExtension1) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[32]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2446,20 +2425,17 @@ func (x *TestAllTypesProto2_MessageSetCorrectExtension1) GetStr() string {
 }
 
 type TestAllTypesProto2_MessageSetCorrectExtension2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	I             *int32                 `protobuf:"varint,9,opt,name=i" json:"i,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	I *int32 `protobuf:"varint,9,opt,name=i" json:"i,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllTypesProto2_MessageSetCorrectExtension2) Reset() {
 	*x = TestAllTypesProto2_MessageSetCorrectExtension2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[33]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2_MessageSetCorrectExtension2) String() string {
@@ -2470,7 +2446,7 @@ func (*TestAllTypesProto2_MessageSetCorrectExtension2) ProtoMessage() {}
 
 func (x *TestAllTypesProto2_MessageSetCorrectExtension2) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[33]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2493,20 +2469,17 @@ func (x *TestAllTypesProto2_MessageSetCorrectExtension2) GetI() int32 {
 }
 
 type UnknownToTestAllTypes_OptionalGroup struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             *int32                 `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	A *int32 `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UnknownToTestAllTypes_OptionalGroup) Reset() {
 	*x = UnknownToTestAllTypes_OptionalGroup{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[34]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *UnknownToTestAllTypes_OptionalGroup) String() string {
@@ -2517,7 +2490,7 @@ func (*UnknownToTestAllTypes_OptionalGroup) ProtoMessage() {}
 
 func (x *UnknownToTestAllTypes_OptionalGroup) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[34]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2540,22 +2513,19 @@ func (x *UnknownToTestAllTypes_OptionalGroup) GetA() int32 {
 }
 
 type TestAllRequiredTypesProto2_NestedMessage struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
+	state               protoimpl.MessageState      `protogen:"open.v1"`
 	A                   *int32                      `protobuf:"varint,1,req,name=a" json:"a,omitempty"`
 	Corecursive         *TestAllRequiredTypesProto2 `protobuf:"bytes,2,req,name=corecursive" json:"corecursive,omitempty"`
 	OptionalCorecursive *TestAllRequiredTypesProto2 `protobuf:"bytes,3,opt,name=optional_corecursive,json=optionalCorecursive" json:"optional_corecursive,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *TestAllRequiredTypesProto2_NestedMessage) Reset() {
 	*x = TestAllRequiredTypesProto2_NestedMessage{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[35]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllRequiredTypesProto2_NestedMessage) String() string {
@@ -2566,7 +2536,7 @@ func (*TestAllRequiredTypesProto2_NestedMessage) ProtoMessage() {}
 
 func (x *TestAllRequiredTypesProto2_NestedMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[35]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2604,21 +2574,18 @@ func (x *TestAllRequiredTypesProto2_NestedMessage) GetOptionalCorecursive() *Tes
 
 // groups
 type TestAllRequiredTypesProto2_Data struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	GroupInt32    *int32                 `protobuf:"varint,202,req,name=group_int32,json=groupInt32" json:"group_int32,omitempty"`
+	GroupUint32   *uint32                `protobuf:"varint,203,req,name=group_uint32,json=groupUint32" json:"group_uint32,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	GroupInt32  *int32  `protobuf:"varint,202,req,name=group_int32,json=groupInt32" json:"group_int32,omitempty"`
-	GroupUint32 *uint32 `protobuf:"varint,203,req,name=group_uint32,json=groupUint32" json:"group_uint32,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllRequiredTypesProto2_Data) Reset() {
 	*x = TestAllRequiredTypesProto2_Data{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[36]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllRequiredTypesProto2_Data) String() string {
@@ -2629,7 +2596,7 @@ func (*TestAllRequiredTypesProto2_Data) ProtoMessage() {}
 
 func (x *TestAllRequiredTypesProto2_Data) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[36]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2660,19 +2627,17 @@ func (x *TestAllRequiredTypesProto2_Data) GetGroupUint32() uint32 {
 
 // message_set test case.
 type TestAllRequiredTypesProto2_MessageSetCorrect struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
+	state           protoimpl.MessageState `protogen:"open.v1"`
 	extensionFields protoimpl.ExtensionFields
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *TestAllRequiredTypesProto2_MessageSetCorrect) Reset() {
 	*x = TestAllRequiredTypesProto2_MessageSetCorrect{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[37]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllRequiredTypesProto2_MessageSetCorrect) String() string {
@@ -2683,7 +2648,7 @@ func (*TestAllRequiredTypesProto2_MessageSetCorrect) ProtoMessage() {}
 
 func (x *TestAllRequiredTypesProto2_MessageSetCorrect) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[37]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2699,20 +2664,17 @@ func (*TestAllRequiredTypesProto2_MessageSetCorrect) Descriptor() ([]byte, []int
 }
 
 type TestAllRequiredTypesProto2_MessageSetCorrectExtension1 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Str           *string                `protobuf:"bytes,25,req,name=str" json:"str,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	Str *string `protobuf:"bytes,25,req,name=str" json:"str,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllRequiredTypesProto2_MessageSetCorrectExtension1) Reset() {
 	*x = TestAllRequiredTypesProto2_MessageSetCorrectExtension1{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[38]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllRequiredTypesProto2_MessageSetCorrectExtension1) String() string {
@@ -2723,7 +2685,7 @@ func (*TestAllRequiredTypesProto2_MessageSetCorrectExtension1) ProtoMessage() {}
 
 func (x *TestAllRequiredTypesProto2_MessageSetCorrectExtension1) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[38]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -2746,20 +2708,17 @@ func (x *TestAllRequiredTypesProto2_MessageSetCorrectExtension1) GetStr() string
 }
 
 type TestAllRequiredTypesProto2_MessageSetCorrectExtension2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	I             *int32                 `protobuf:"varint,9,req,name=i" json:"i,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	I *int32 `protobuf:"varint,9,req,name=i" json:"i,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllRequiredTypesProto2_MessageSetCorrectExtension2) Reset() {
 	*x = TestAllRequiredTypesProto2_MessageSetCorrectExtension2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[39]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllRequiredTypesProto2_MessageSetCorrectExtension2) String() string {
@@ -2770,7 +2729,7 @@ func (*TestAllRequiredTypesProto2_MessageSetCorrectExtension2) ProtoMessage() {}
 
 func (x *TestAllRequiredTypesProto2_MessageSetCorrectExtension2) ProtoReflect() protoreflect.Message {
 	mi := &file_editions_golden_test_messages_proto2_editions_proto_msgTypes[39]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -3866,12 +3825,13 @@ var file_editions_golden_test_messages_proto2_editions_proto_rawDesc = []byte{
 	0x65, 0x73, 0x2e, 0x65, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x32, 0x2e, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x42, 0x05, 0xaa,
 	0x01, 0x02, 0x28, 0x02, 0x52, 0x0a, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x66, 0x69, 0x65, 0x6c, 0x64,
-	0x42, 0x4f, 0x0a, 0x31, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
+	0x42, 0x52, 0x0a, 0x31, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x5f, 0x74, 0x65, 0x73, 0x74, 0x5f, 0x6d, 0x65, 0x73,
 	0x73, 0x61, 0x67, 0x65, 0x73, 0x2e, 0x65, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x32, 0x48, 0x01, 0xa2, 0x02, 0x0e, 0x45, 0x64, 0x69, 0x74, 0x69, 0x6f,
-	0x6e, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0x92, 0x03, 0x06, 0x10, 0x02, 0x18, 0x02, 0x20,
-	0x03, 0x62, 0x08, 0x65, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x70, 0xe8, 0x07,
+	0x72, 0x6f, 0x74, 0x6f, 0x32, 0x48, 0x01, 0xf8, 0x01, 0x01, 0xa2, 0x02, 0x0e, 0x45, 0x64, 0x69,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0x92, 0x03, 0x06, 0x10, 0x02,
+	0x18, 0x02, 0x20, 0x03, 0x62, 0x08, 0x65, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x70, 0xe8,
+	0x07,
 }
 
 var (
@@ -4007,268 +3967,6 @@ func init() { file_editions_golden_test_messages_proto2_editions_proto_init() }
 func file_editions_golden_test_messages_proto2_editions_proto_init() {
 	if File_editions_golden_test_messages_proto2_editions_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*ForeignMessageProto2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[2].Exporter = func(v any, i int) any {
-			switch v := v.(*GroupField); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[3].Exporter = func(v any, i int) any {
-			switch v := v.(*UnknownToTestAllTypes); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[4].Exporter = func(v any, i int) any {
-			switch v := v.(*NullHypothesisProto2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[5].Exporter = func(v any, i int) any {
-			switch v := v.(*EnumOnlyProto2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[6].Exporter = func(v any, i int) any {
-			switch v := v.(*OneStringProto2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[7].Exporter = func(v any, i int) any {
-			switch v := v.(*ProtoWithKeywords); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[8].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllRequiredTypesProto2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[9].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2_NestedMessage); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[29].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2_Data); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[30].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2_MultiWordGroupField); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[31].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2_MessageSetCorrect); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[32].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2_MessageSetCorrectExtension1); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[33].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2_MessageSetCorrectExtension2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[34].Exporter = func(v any, i int) any {
-			switch v := v.(*UnknownToTestAllTypes_OptionalGroup); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[35].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllRequiredTypesProto2_NestedMessage); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[36].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllRequiredTypesProto2_Data); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[37].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllRequiredTypesProto2_MessageSetCorrect); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[38].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllRequiredTypesProto2_MessageSetCorrectExtension1); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_editions_golden_test_messages_proto2_editions_proto_msgTypes[39].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllRequiredTypesProto2_MessageSetCorrectExtension2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	file_editions_golden_test_messages_proto2_editions_proto_msgTypes[0].OneofWrappers = []any{
 		(*TestAllTypesProto2_OneofUint32)(nil),

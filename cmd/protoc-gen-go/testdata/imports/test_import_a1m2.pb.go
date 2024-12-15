@@ -16,20 +16,17 @@ import (
 )
 
 type A1M2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	F             *test_a_1.M2           `protobuf:"bytes,1,opt,name=f,proto3" json:"f,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	F *test_a_1.M2 `protobuf:"bytes,1,opt,name=f,proto3" json:"f,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *A1M2) Reset() {
 	*x = A1M2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_imports_test_import_a1m2_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_imports_test_import_a1m2_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *A1M2) String() string {
@@ -40,7 +37,7 @@ func (*A1M2) ProtoMessage() {}
 
 func (x *A1M2) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_imports_test_import_a1m2_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -112,20 +109,6 @@ func init() { file_cmd_protoc_gen_go_testdata_imports_test_import_a1m2_proto_ini
 func file_cmd_protoc_gen_go_testdata_imports_test_import_a1m2_proto_init() {
 	if File_cmd_protoc_gen_go_testdata_imports_test_import_a1m2_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_cmd_protoc_gen_go_testdata_imports_test_import_a1m2_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*A1M2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

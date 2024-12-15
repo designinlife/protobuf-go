@@ -77,10 +77,7 @@ func (TestAllTypesProto2_NestedEnum) EnumDescriptor() ([]byte, []int) {
 }
 
 type TestAllTypesProto2 struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
+	state                  protoimpl.MessageState                       `protogen:"open.v1"`
 	OptionalInt32          *int32                                       `protobuf:"varint,1,opt,name=optional_int32,json=optionalInt32" json:"optional_int32,omitempty"`
 	OptionalInt64          *int64                                       `protobuf:"varint,2,opt,name=optional_int64,json=optionalInt64" json:"optional_int64,omitempty"`
 	OptionalUint32         *uint32                                      `protobuf:"varint,3,opt,name=optional_uint32,json=optionalUint32" json:"optional_uint32,omitempty"`
@@ -151,7 +148,7 @@ type TestAllTypesProto2 struct {
 	DefaultString     *string                        `protobuf:"bytes,94,opt,name=default_string,json=defaultString,def=hello" json:"default_string,omitempty"`
 	DefaultBytes      []byte                         `protobuf:"bytes,95,opt,name=default_bytes,json=defaultBytes,def=world" json:"default_bytes,omitempty"`
 	DefaultNestedEnum *TestAllTypesProto2_NestedEnum `protobuf:"varint,96,opt,name=default_nested_enum,json=defaultNestedEnum,enum=goproto.proto.test.TestAllTypesProto2_NestedEnum,def=1" json:"default_nested_enum,omitempty"`
-	// Types that are assignable to OneofField:
+	// Types that are valid to be assigned to OneofField:
 	//
 	//	*TestAllTypesProto2_OneofUint32
 	//	*TestAllTypesProto2_OneofNestedMessage
@@ -166,10 +163,12 @@ type TestAllTypesProto2 struct {
 	OneofField isTestAllTypesProto2_OneofField `protobuf_oneof:"oneof_field"`
 	// A oneof with exactly one field.
 	//
-	// Types that are assignable to OneofOptional:
+	// Types that are valid to be assigned to OneofOptional:
 	//
 	//	*TestAllTypesProto2_OneofOptionalUint32
 	OneofOptional isTestAllTypesProto2_OneofOptional `protobuf_oneof:"oneof_optional"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 // Default values for TestAllTypesProto2 fields.
@@ -198,11 +197,9 @@ var (
 
 func (x *TestAllTypesProto2) Reset() {
 	*x = TestAllTypesProto2{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2) String() string {
@@ -213,7 +210,7 @@ func (*TestAllTypesProto2) ProtoMessage() {}
 
 func (x *TestAllTypesProto2) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -711,93 +708,115 @@ func (x *TestAllTypesProto2) GetDefaultNestedEnum() TestAllTypesProto2_NestedEnu
 	return Default_TestAllTypesProto2_DefaultNestedEnum
 }
 
-func (m *TestAllTypesProto2) GetOneofField() isTestAllTypesProto2_OneofField {
-	if m != nil {
-		return m.OneofField
+func (x *TestAllTypesProto2) GetOneofField() isTestAllTypesProto2_OneofField {
+	if x != nil {
+		return x.OneofField
 	}
 	return nil
 }
 
 func (x *TestAllTypesProto2) GetOneofUint32() uint32 {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofUint32); ok {
-		return x.OneofUint32
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofUint32); ok {
+			return x.OneofUint32
+		}
 	}
 	return 0
 }
 
 func (x *TestAllTypesProto2) GetOneofNestedMessage() *TestAllTypesProto2_NestedMessage {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofNestedMessage); ok {
-		return x.OneofNestedMessage
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofNestedMessage); ok {
+			return x.OneofNestedMessage
+		}
 	}
 	return nil
 }
 
 func (x *TestAllTypesProto2) GetOneofString() string {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofString); ok {
-		return x.OneofString
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofString); ok {
+			return x.OneofString
+		}
 	}
 	return ""
 }
 
 func (x *TestAllTypesProto2) GetOneofBytes() []byte {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofBytes); ok {
-		return x.OneofBytes
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofBytes); ok {
+			return x.OneofBytes
+		}
 	}
 	return nil
 }
 
 func (x *TestAllTypesProto2) GetOneofBool() bool {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofBool); ok {
-		return x.OneofBool
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofBool); ok {
+			return x.OneofBool
+		}
 	}
 	return false
 }
 
 func (x *TestAllTypesProto2) GetOneofUint64() uint64 {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofUint64); ok {
-		return x.OneofUint64
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofUint64); ok {
+			return x.OneofUint64
+		}
 	}
 	return 0
 }
 
 func (x *TestAllTypesProto2) GetOneofFloat() float32 {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofFloat); ok {
-		return x.OneofFloat
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofFloat); ok {
+			return x.OneofFloat
+		}
 	}
 	return 0
 }
 
 func (x *TestAllTypesProto2) GetOneofDouble() float64 {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofDouble); ok {
-		return x.OneofDouble
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofDouble); ok {
+			return x.OneofDouble
+		}
 	}
 	return 0
 }
 
 func (x *TestAllTypesProto2) GetOneofEnum() TestAllTypesProto2_NestedEnum {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_OneofEnum); ok {
-		return x.OneofEnum
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_OneofEnum); ok {
+			return x.OneofEnum
+		}
 	}
 	return TestAllTypesProto2_FOO
 }
 
 func (x *TestAllTypesProto2) GetOneofgroup() *TestAllTypesProto2_OneofGroup {
-	if x, ok := x.GetOneofField().(*TestAllTypesProto2_Oneofgroup); ok {
-		return x.Oneofgroup
+	if x != nil {
+		if x, ok := x.OneofField.(*TestAllTypesProto2_Oneofgroup); ok {
+			return x.Oneofgroup
+		}
 	}
 	return nil
 }
 
-func (m *TestAllTypesProto2) GetOneofOptional() isTestAllTypesProto2_OneofOptional {
-	if m != nil {
-		return m.OneofOptional
+func (x *TestAllTypesProto2) GetOneofOptional() isTestAllTypesProto2_OneofOptional {
+	if x != nil {
+		return x.OneofOptional
 	}
 	return nil
 }
 
 func (x *TestAllTypesProto2) GetOneofOptionalUint32() uint32 {
-	if x, ok := x.GetOneofOptional().(*TestAllTypesProto2_OneofOptionalUint32); ok {
-		return x.OneofOptionalUint32
+	if x != nil {
+		if x, ok := x.OneofOptional.(*TestAllTypesProto2_OneofOptionalUint32); ok {
+			return x.OneofOptionalUint32
+		}
 	}
 	return 0
 }
@@ -877,21 +896,18 @@ type TestAllTypesProto2_OneofOptionalUint32 struct {
 func (*TestAllTypesProto2_OneofOptionalUint32) isTestAllTypesProto2_OneofOptional() {}
 
 type TestAllTypesProto2_NestedMessage struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             *int32                 `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
+	Corecursive   *TestAllTypesProto2    `protobuf:"bytes,2,opt,name=corecursive" json:"corecursive,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	A           *int32              `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
-	Corecursive *TestAllTypesProto2 `protobuf:"bytes,2,opt,name=corecursive" json:"corecursive,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllTypesProto2_NestedMessage) Reset() {
 	*x = TestAllTypesProto2_NestedMessage{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2_NestedMessage) String() string {
@@ -902,7 +918,7 @@ func (*TestAllTypesProto2_NestedMessage) ProtoMessage() {}
 
 func (x *TestAllTypesProto2_NestedMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -932,22 +948,19 @@ func (x *TestAllTypesProto2_NestedMessage) GetCorecursive() *TestAllTypesProto2 
 }
 
 type TestAllTypesProto2_OptionalGroup struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
+	state                 protoimpl.MessageState            `protogen:"open.v1"`
 	A                     *int32                            `protobuf:"varint,17,opt,name=a" json:"a,omitempty"`
 	OptionalNestedMessage *TestAllTypesProto2_NestedMessage `protobuf:"bytes,1000,opt,name=optional_nested_message,json=optionalNestedMessage" json:"optional_nested_message,omitempty"`
 	SameFieldNumber       *int32                            `protobuf:"varint,16,opt,name=same_field_number,json=sameFieldNumber" json:"same_field_number,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *TestAllTypesProto2_OptionalGroup) Reset() {
 	*x = TestAllTypesProto2_OptionalGroup{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2_OptionalGroup) String() string {
@@ -958,7 +971,7 @@ func (*TestAllTypesProto2_OptionalGroup) ProtoMessage() {}
 
 func (x *TestAllTypesProto2_OptionalGroup) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -995,21 +1008,18 @@ func (x *TestAllTypesProto2_OptionalGroup) GetSameFieldNumber() int32 {
 }
 
 type TestAllTypesProto2_RepeatedGroup struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
+	state                 protoimpl.MessageState            `protogen:"open.v1"`
 	A                     *int32                            `protobuf:"varint,47,opt,name=a" json:"a,omitempty"`
 	OptionalNestedMessage *TestAllTypesProto2_NestedMessage `protobuf:"bytes,1001,opt,name=optional_nested_message,json=optionalNestedMessage" json:"optional_nested_message,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *TestAllTypesProto2_RepeatedGroup) Reset() {
 	*x = TestAllTypesProto2_RepeatedGroup{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2_RepeatedGroup) String() string {
@@ -1020,7 +1030,7 @@ func (*TestAllTypesProto2_RepeatedGroup) ProtoMessage() {}
 
 func (x *TestAllTypesProto2_RepeatedGroup) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1050,21 +1060,18 @@ func (x *TestAllTypesProto2_RepeatedGroup) GetOptionalNestedMessage() *TestAllTy
 }
 
 type TestAllTypesProto2_OneofGroup struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             *int32                 `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
+	B             *int32                 `protobuf:"varint,2,opt,name=b" json:"b,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	A *int32 `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
-	B *int32 `protobuf:"varint,2,opt,name=b" json:"b,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllTypesProto2_OneofGroup) Reset() {
 	*x = TestAllTypesProto2_OneofGroup{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[21]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllTypesProto2_OneofGroup) String() string {
@@ -1075,7 +1082,7 @@ func (*TestAllTypesProto2_OneofGroup) ProtoMessage() {}
 
 func (x *TestAllTypesProto2_OneofGroup) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[21]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1630,68 +1637,6 @@ func init() { file_internal_testprotos_editionsfuzztest_test2_proto_init() }
 func file_internal_testprotos_editionsfuzztest_test2_proto_init() {
 	if File_internal_testprotos_editionsfuzztest_test2_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2_NestedMessage); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[2].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2_OptionalGroup); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[3].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2_RepeatedGroup); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[21].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllTypesProto2_OneofGroup); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	file_internal_testprotos_editionsfuzztest_test2_proto_msgTypes[0].OneofWrappers = []any{
 		(*TestAllTypesProto2_OneofUint32)(nil),

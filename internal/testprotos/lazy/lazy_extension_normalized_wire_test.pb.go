@@ -15,22 +15,19 @@ import (
 )
 
 type Sub struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	C               *uint32                `protobuf:"varint,3,opt,name=c" json:"c,omitempty"`
+	Grandchild      *Sub                   `protobuf:"bytes,4,opt,name=grandchild" json:"grandchild,omitempty"`
 	extensionFields protoimpl.ExtensionFields
-
-	C          *uint32 `protobuf:"varint,3,opt,name=c" json:"c,omitempty"`
-	Grandchild *Sub    `protobuf:"bytes,4,opt,name=grandchild" json:"grandchild,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *Sub) Reset() {
 	*x = Sub{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Sub) String() string {
@@ -41,7 +38,7 @@ func (*Sub) ProtoMessage() {}
 
 func (x *Sub) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -71,21 +68,18 @@ func (x *Sub) GetGrandchild() *Sub {
 }
 
 type Top struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             *uint32                `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
+	Child         *Sub                   `protobuf:"bytes,2,opt,name=child" json:"child,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	A     *uint32 `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
-	Child *Sub    `protobuf:"bytes,2,opt,name=child" json:"child,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Top) Reset() {
 	*x = Top{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Top) String() string {
@@ -96,7 +90,7 @@ func (*Top) ProtoMessage() {}
 
 func (x *Top) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -126,20 +120,17 @@ func (x *Top) GetChild() *Sub {
 }
 
 type Ext struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SomeFlag      *bool                  `protobuf:"varint,1,opt,name=some_flag,json=someFlag" json:"some_flag,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	SomeFlag *bool `protobuf:"varint,1,opt,name=some_flag,json=someFlag" json:"some_flag,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Ext) Reset() {
 	*x = Ext{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Ext) String() string {
@@ -150,7 +141,7 @@ func (*Ext) ProtoMessage() {}
 
 func (x *Ext) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -259,46 +250,6 @@ func init() { file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_
 func file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_init() {
 	if File_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*Sub); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*Top); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_lazy_lazy_extension_normalized_wire_test_proto_msgTypes[2].Exporter = func(v any, i int) any {
-			switch v := v.(*Ext); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

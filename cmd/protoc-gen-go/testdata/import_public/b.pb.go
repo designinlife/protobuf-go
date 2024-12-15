@@ -16,21 +16,18 @@ import (
 )
 
 type Local struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	M             *sub.M                 `protobuf:"bytes,1,opt,name=m" json:"m,omitempty"`
+	E             *sub.E                 `protobuf:"varint,2,opt,name=e,enum=goproto.protoc.import_public.sub.E" json:"e,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	M *sub.M `protobuf:"bytes,1,opt,name=m" json:"m,omitempty"`
-	E *sub.E `protobuf:"varint,2,opt,name=e,enum=goproto.protoc.import_public.sub.E" json:"e,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Local) Reset() {
 	*x = Local{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cmd_protoc_gen_go_testdata_import_public_b_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_cmd_protoc_gen_go_testdata_import_public_b_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Local) String() string {
@@ -41,7 +38,7 @@ func (*Local) ProtoMessage() {}
 
 func (x *Local) ProtoReflect() protoreflect.Message {
 	mi := &file_cmd_protoc_gen_go_testdata_import_public_b_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -127,20 +124,6 @@ func init() { file_cmd_protoc_gen_go_testdata_import_public_b_proto_init() }
 func file_cmd_protoc_gen_go_testdata_import_public_b_proto_init() {
 	if File_cmd_protoc_gen_go_testdata_import_public_b_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_cmd_protoc_gen_go_testdata_import_public_b_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*Local); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

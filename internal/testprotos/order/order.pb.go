@@ -17,27 +17,24 @@ import (
 )
 
 type Message struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
-	extensionFields protoimpl.ExtensionFields
-
-	Field_2 *string `protobuf:"bytes,2,opt,name=field_2,json=field2" json:"field_2,omitempty"`
-	Field_1 *string `protobuf:"bytes,1,opt,name=field_1,json=field1" json:"field_1,omitempty"`
-	// Types that are assignable to Oneof_1:
+	state   protoimpl.MessageState `protogen:"open.v1"`
+	Field_2 *string                `protobuf:"bytes,2,opt,name=field_2,json=field2" json:"field_2,omitempty"`
+	Field_1 *string                `protobuf:"bytes,1,opt,name=field_1,json=field1" json:"field_1,omitempty"`
+	// Types that are valid to be assigned to Oneof_1:
 	//
 	//	*Message_Field_10
-	Oneof_1  isMessage_Oneof_1 `protobuf_oneof:"oneof_1"`
-	Field_20 *string           `protobuf:"bytes,20,opt,name=field_20,json=field20" json:"field_20,omitempty"`
+	Oneof_1         isMessage_Oneof_1 `protobuf_oneof:"oneof_1"`
+	Field_20        *string           `protobuf:"bytes,20,opt,name=field_20,json=field20" json:"field_20,omitempty"`
+	extensionFields protoimpl.ExtensionFields
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *Message) Reset() {
 	*x = Message{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_order_order_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_order_order_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *Message) String() string {
@@ -48,7 +45,7 @@ func (*Message) ProtoMessage() {}
 
 func (x *Message) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_order_order_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -77,16 +74,18 @@ func (x *Message) GetField_1() string {
 	return ""
 }
 
-func (m *Message) GetOneof_1() isMessage_Oneof_1 {
-	if m != nil {
-		return m.Oneof_1
+func (x *Message) GetOneof_1() isMessage_Oneof_1 {
+	if x != nil {
+		return x.Oneof_1
 	}
 	return nil
 }
 
 func (x *Message) GetField_10() string {
-	if x, ok := x.GetOneof_1().(*Message_Field_10); ok {
-		return x.Field_10
+	if x != nil {
+		if x, ok := x.Oneof_1.(*Message_Field_10); ok {
+			return x.Field_10
+		}
 	}
 	return ""
 }
@@ -208,22 +207,6 @@ func init() { file_internal_testprotos_order_order_proto_init() }
 func file_internal_testprotos_order_order_proto_init() {
 	if File_internal_testprotos_order_order_proto != nil {
 		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_order_order_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*Message); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
 	}
 	file_internal_testprotos_order_order_proto_msgTypes[0].OneofWrappers = []any{
 		(*Message_Field_10)(nil),

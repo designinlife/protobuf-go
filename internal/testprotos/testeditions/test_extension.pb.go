@@ -15,19 +15,17 @@ import (
 )
 
 type TestAllExtensions struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
+	state           protoimpl.MessageState `protogen:"open.v1"`
 	extensionFields protoimpl.ExtensionFields
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *TestAllExtensions) Reset() {
 	*x = TestAllExtensions{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllExtensions) String() string {
@@ -38,7 +36,7 @@ func (*TestAllExtensions) ProtoMessage() {}
 
 func (x *TestAllExtensions) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -54,22 +52,19 @@ func (*TestAllExtensions) Descriptor() ([]byte, []int) {
 }
 
 type OptionalGroup struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
+	state                 protoimpl.MessageState           `protogen:"open.v1"`
 	A                     *int32                           `protobuf:"varint,17,opt,name=a" json:"a,omitempty"`
 	SameFieldNumber       *int32                           `protobuf:"varint,16,opt,name=same_field_number,json=sameFieldNumber" json:"same_field_number,omitempty"`
 	OptionalNestedMessage *TestAllExtensions_NestedMessage `protobuf:"bytes,1000,opt,name=optional_nested_message,json=optionalNestedMessage" json:"optional_nested_message,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *OptionalGroup) Reset() {
 	*x = OptionalGroup{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *OptionalGroup) String() string {
@@ -80,7 +75,7 @@ func (*OptionalGroup) ProtoMessage() {}
 
 func (x *OptionalGroup) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -117,21 +112,18 @@ func (x *OptionalGroup) GetOptionalNestedMessage() *TestAllExtensions_NestedMess
 }
 
 type RepeatedGroup struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
+	state                 protoimpl.MessageState           `protogen:"open.v1"`
 	A                     *int32                           `protobuf:"varint,47,opt,name=a" json:"a,omitempty"`
 	OptionalNestedMessage *TestAllExtensions_NestedMessage `protobuf:"bytes,1001,opt,name=optional_nested_message,json=optionalNestedMessage" json:"optional_nested_message,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *RepeatedGroup) Reset() {
 	*x = RepeatedGroup{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *RepeatedGroup) String() string {
@@ -142,7 +134,7 @@ func (*RepeatedGroup) ProtoMessage() {}
 
 func (x *RepeatedGroup) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -172,19 +164,17 @@ func (x *RepeatedGroup) GetOptionalNestedMessage() *TestAllExtensions_NestedMess
 }
 
 type TestFeatureResolution struct {
-	state           protoimpl.MessageState
-	sizeCache       protoimpl.SizeCache
-	unknownFields   protoimpl.UnknownFields
+	state           protoimpl.MessageState `protogen:"open.v1"`
 	extensionFields protoimpl.ExtensionFields
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *TestFeatureResolution) Reset() {
 	*x = TestFeatureResolution{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestFeatureResolution) String() string {
@@ -195,7 +185,7 @@ func (*TestFeatureResolution) ProtoMessage() {}
 
 func (x *TestFeatureResolution) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -211,18 +201,16 @@ func (*TestFeatureResolution) Descriptor() ([]byte, []int) {
 }
 
 type RepeatedFieldEncoding struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *RepeatedFieldEncoding) Reset() {
 	*x = RepeatedFieldEncoding{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *RepeatedFieldEncoding) String() string {
@@ -233,7 +221,7 @@ func (*RepeatedFieldEncoding) ProtoMessage() {}
 
 func (x *RepeatedFieldEncoding) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -249,21 +237,18 @@ func (*RepeatedFieldEncoding) Descriptor() ([]byte, []int) {
 }
 
 type TestAllExtensions_NestedMessage struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             *int32                 `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
+	Corecursive   *TestAllExtensions     `protobuf:"bytes,2,opt,name=corecursive" json:"corecursive,omitempty"`
 	unknownFields protoimpl.UnknownFields
-
-	A           *int32             `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
-	Corecursive *TestAllExtensions `protobuf:"bytes,2,opt,name=corecursive" json:"corecursive,omitempty"`
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *TestAllExtensions_NestedMessage) Reset() {
 	*x = TestAllExtensions_NestedMessage{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
+	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
 }
 
 func (x *TestAllExtensions_NestedMessage) String() string {
@@ -274,7 +259,7 @@ func (*TestAllExtensions_NestedMessage) ProtoMessage() {}
 
 func (x *TestAllExtensions_NestedMessage) ProtoReflect() protoreflect.Message {
 	mi := &file_internal_testprotos_testeditions_test_extension_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
+	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
 			ms.StoreMessageInfo(mi)
@@ -1394,84 +1379,6 @@ func file_internal_testprotos_testeditions_test_extension_proto_init() {
 		return
 	}
 	file_internal_testprotos_testeditions_test_proto_init()
-	if !protoimpl.UnsafeEnabled {
-		file_internal_testprotos_testeditions_test_extension_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllExtensions); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_testeditions_test_extension_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*OptionalGroup); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_testeditions_test_extension_proto_msgTypes[2].Exporter = func(v any, i int) any {
-			switch v := v.(*RepeatedGroup); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_testeditions_test_extension_proto_msgTypes[3].Exporter = func(v any, i int) any {
-			switch v := v.(*TestFeatureResolution); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			case 3:
-				return &v.extensionFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_testeditions_test_extension_proto_msgTypes[4].Exporter = func(v any, i int) any {
-			switch v := v.(*RepeatedFieldEncoding); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_internal_testprotos_testeditions_test_extension_proto_msgTypes[5].Exporter = func(v any, i int) any {
-			switch v := v.(*TestAllExtensions_NestedMessage); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
